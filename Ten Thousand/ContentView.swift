@@ -17,7 +17,8 @@ struct ContentView: View {
                 Text("Ten Thousand")
                     .font(.custom("AvenirNext-DemiBold", size: 50))
                     .foregroundColor(Color(#colorLiteral(red: 0.4862297773, green: 0.4863032103, blue: 0.4862136245, alpha: 1)))
-                Text("\"Time abides long enough for those who make use of it.\"")           .foregroundColor(Color(#colorLiteral(red: 0.2744825482, green: 0.2745271921, blue: 0.2744727135, alpha: 1)))
+                Text("\"Time abides long enough for those who make use of it.\"")
+                    .foregroundColor(Color(#colorLiteral(red: 0.2744825482, green: 0.2745271921, blue: 0.2744727135, alpha: 1)))
                     .multilineTextAlignment(.center)
                 HStack {
                     Spacer()
