@@ -68,10 +68,13 @@ struct ActionButton: View {
     
     var body: some View {
         Button(action: {
+            //Where to add the action
+            
+            
             
         }) {
             Text(buttonName)
-                .font(.custom("Avenir-Black", size: fontSize))
+                .font(.custom("Impact", size: fontSize))
                 .foregroundColor(Color.white)
                 .opacity(0.85)
                 .frame(width: 335.0, height: 54.0)
