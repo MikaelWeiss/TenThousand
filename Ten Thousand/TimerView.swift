@@ -26,7 +26,7 @@ struct TimerView: View {
                     .padding()
                 
                 HStack {
-                    ActionButton(buttonName: timerRunning ? "Stop" : "Start", buttonHight: 45, buttonWidth: 200, fontSize: 30)
+                    ActionButton(buttonName: timerRunning ? "Stop" : "Start", buttonHight: 45, buttonWidth: 45, fontSize: 30)
                         .onTapGesture {
                             self.timerRunning.toggle()
                             if self.timerRunning {

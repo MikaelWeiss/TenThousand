@@ -13,14 +13,9 @@ struct Logo: View {
         VStack {
             ZStack {
                 Image("Logo")
+                    .frame(width: 44, height: 44)
             }
             Spacer()
         }
-    }
-}
-
-struct Logo_Previews: PreviewProvider {
-    static var previews: some View {
-        Logo()
     }
 }
