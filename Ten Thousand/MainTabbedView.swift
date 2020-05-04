@@ -10,7 +10,23 @@ import SwiftUI
 
 struct MainTabbedView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView() {
+        TimerView()
+            .tabItem {
+                
+                Image(systemName: "clock")
+                    .font(.system(size: 16, weight: .semibold))
+                    .imageScale(.large)
+                
+        }.tag(1)
+        LogListView()
+            .tabItem {
+                Image(systemName: "list.bullet")
+                .font(.system(size: 16, weight: .semibold))
+                .imageScale(.large)
+                
+        }.tag(2)
+        }
     }
 }
 
