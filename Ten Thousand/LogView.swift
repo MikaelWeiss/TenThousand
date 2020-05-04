@@ -19,7 +19,7 @@ struct LogView: View {
                     .opacity(0.0001)
                 Text("Computer Programming")
                     .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .fontWeight(.black)
                     .lineLimit(1)
                     .padding(.horizontal)
                     
@@ -27,7 +27,7 @@ struct LogView: View {
                     .frame(height: 1)
                     .padding(.leading)
                     .frame(maxWidth: .infinity)
-                    .opacity(0.7)
+                    .opacity(0.3)
                 
                 List(testLogInfo) { log in
                     VStack(alignment: .leading) {
