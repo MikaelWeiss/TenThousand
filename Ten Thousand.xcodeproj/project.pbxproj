@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A51AE2CA245E2A480081C891 /* TabbedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AE2C9245E2A480081C891 /* TabbedMainView.swift */; };
-		A51AE2CC245E2C420081C891 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AE2CB245E2C420081C891 /* ActionButton.swift */; };
-		A51AE2D1245E2FBC0081C891 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AE2D0245E2FBC0081C891 /* TimerView.swift */; };
-		A51AE2D3245E2FC60081C891 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AE2D2245E2FC60081C891 /* LogView.swift */; };
-		A53E0DC3245C8BB2002962FE /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E0DC2245C8BB2002962FE /* Logo.swift */; };
 		A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3A2459BAF20074A99A /* AppDelegate.swift */; };
 		A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3C2459BAF20074A99A /* SceneDelegate.swift */; };
-		A5700B3F2459BAF20074A99A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3E2459BAF20074A99A /* ContentView.swift */; };
 		A5700B412459BAF30074A99A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B402459BAF30074A99A /* Assets.xcassets */; };
 		A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B432459BAF30074A99A /* Preview Assets.xcassets */; };
 		A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5700B452459BAF30074A99A /* LaunchScreen.storyboard */; };
@@ -22,15 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A51AE2C9245E2A480081C891 /* TabbedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedMainView.swift; sourceTree = "<group>"; };
-		A51AE2CB245E2C420081C891 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		A51AE2D0245E2FBC0081C891 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		A51AE2D2245E2FC60081C891 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
-		A53E0DC2245C8BB2002962FE /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		A5700B372459BAF20074A99A /* Ten Thousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ten Thousand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5700B3A2459BAF20074A99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5700B3C2459BAF20074A99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5700B3E2459BAF20074A99A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5700B402459BAF30074A99A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5700B432459BAF30074A99A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5700B462459BAF30074A99A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,14 +48,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A51AE2CF245E2D5C0081C891 /* Screens On Hold */ = {
-			isa = PBXGroup;
-			children = (
-				A5700B3E2459BAF20074A99A /* ContentView.swift */,
-			);
-			path = "Screens On Hold";
-			sourceTree = "<group>";
-		};
 		A5700B2E2459BAF20074A99A = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +67,6 @@
 		A5700B392459BAF20074A99A /* Ten Thousand */ = {
 			isa = PBXGroup;
 			children = (
-				A51AE2CF245E2D5C0081C891 /* Screens On Hold */,
-				A51AE2C9245E2A480081C891 /* TabbedMainView.swift */,
-				A51AE2D0245E2FBC0081C891 /* TimerView.swift */,
-				A51AE2D2245E2FC60081C891 /* LogView.swift */,
-				A53E0DC2245C8BB2002962FE /* Logo.swift */,
-				A51AE2CB245E2C420081C891 /* ActionButton.swift */,
 				A5700B482459BAF30074A99A /* Info.plist */,
 				A51AE2CE245E2D370081C891 /* Supporting Files */,
 				A5DF46C1245CF9EF00D42229 /* Fonts */,
@@ -189,14 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51AE2D1245E2FBC0081C891 /* TimerView.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
-				A51AE2CA245E2A480081C891 /* TabbedMainView.swift in Sources */,
-				A53E0DC3245C8BB2002962FE /* Logo.swift in Sources */,
-				A51AE2D3245E2FC60081C891 /* LogView.swift in Sources */,
-				A5700B3F2459BAF20074A99A /* ContentView.swift in Sources */,
-				A51AE2CC245E2C420081C891 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
