@@ -11,6 +11,7 @@ import SwiftUI
 struct TimerView: View {
     
     @State var showHelpCenter = false
+    @State var timerRunning = false
     
     var body: some View {
         ZStack {
@@ -52,13 +53,11 @@ struct TimerView: View {
                 Text("00:00:00")
                     .font(.custom("SFProRounded-Bold", size: 40))
                     .frame(maxWidth: .infinity)
-                Button(action: {}) {
-                    Text("Start")
+                    .padding(.bottom, 10)
+                HStack {
+                    blueButton(image: timerRunning ? "pause.fill" : "play.fill")
+                    blueButton(image: "pause.fill")
                 }
-                .frame(width: 100, height: 45)
-                .foregroundColor(.white)
-                .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1960784314, green: 0.7725490196, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
             }
         }
     }
@@ -70,3 +69,21 @@ struct TimerView_Previews: PreviewProvider {
     }
 }
 
+
+struct blueButton: View {
+    
+    var image: String
+    
+    
+    var body: some View {
+        Button(action: {}) {
+            Image(systemName: image)
+        }
+        .frame(width: 44, height: 44)
+        .foregroundColor(.white)
+        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1960784314, green: 0.7725490196, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
+        .clipShape(Circle())
+        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
+    }
+}
