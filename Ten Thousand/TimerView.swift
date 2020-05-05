@@ -48,10 +48,18 @@ struct TimerView: View {
                 Spacer()
             }
             
-            Text("00:00:00")
-                // not applying the correct font. I don't know why though. I'll figure this out later.
-                .font(.custom("SFProRounded-Medium", size: 40))
-            
+            VStack {
+                Text("00:00:00")
+                    .font(.custom("SFProRounded-Bold", size: 40))
+                    .frame(maxWidth: .infinity)
+                Button(action: {}) {
+                    Text("Start")
+                }
+                .frame(width: 100, height: 45)
+                .foregroundColor(.white)
+                .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1960784314, green: 0.7725490196, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
+            }
         }
     }
 }
