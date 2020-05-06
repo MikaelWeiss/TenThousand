@@ -10,15 +10,21 @@ import SwiftUI
 
 struct LogListView: View {
     
-    @ObservedObject var logs = ListStore()
+    @ObservedObject var store = ListStore()
     
     var body: some View {
-        List (logs.allLogs) { thing in
-            VStack {
-                HStack {
-                    Text("")
+        NavigationView {
+            List {
+                ForEach (store.allLogs) { thing in
+                    VStack (alignment: .leading) {
+                        HStack {
+                            Text("\(thing.date) , \(thing.time)")
+                        }
+                        Text(thing.notes)
+                            .multilineTextAlignment(.leading)
+                    }
                 }
-            }
+            }.navigationBarTitle(Text("Test"))
         }
     }
 }
@@ -30,7 +36,7 @@ struct LogListView_Previews: PreviewProvider {
 }
 
 
-struct log {
+struct Log: Identifiable {
     var id = UUID()
     var date: String
     var time: String
@@ -39,6 +45,6 @@ struct log {
 
 
 
-var things: [log] = [
-    log(date: "Jan 1", time: "10 m", notes: "Things to say")
+var things = [
+    Log(date: "Jan 1", time: "10 m", notes: "Things to say")
 ]
