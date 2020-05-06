@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LogListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
     }
 }
 
@@ -19,3 +19,17 @@ struct LogListView_Previews: PreviewProvider {
         LogListView()
     }
 }
+
+
+struct log {
+    var id = UUID()
+    var date: String
+    var time: String
+    var notes: String
+}
+
+
+
+var thing: [log] = [
+    log(date: "Jan 1", time: "10 m", notes: "Things to say")
+]
