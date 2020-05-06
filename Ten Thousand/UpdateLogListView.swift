@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct UpdateLogListView: View {
+    @State var time = Time(hour: 1, minute: 1)
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DurationPickerView(time: $time)
     }
 }
 
@@ -19,3 +22,6 @@ struct UpdateLogListView_Previews: PreviewProvider {
         UpdateLogListView()
     }
 }
+
+
+
