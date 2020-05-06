@@ -11,20 +11,57 @@ import SwiftUI
 struct LogListView: View {
     
     @ObservedObject var store = LogListStore()
+    @State var showHelpCenter = false
+    @State var showAccountView = false
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach (store.allLogs) { thing in
-                    VStack (alignment: .leading) {
-                        HStack {
-                            Text("\(thing.date) , \(thing.time)")
+        ZStack {
+            
+            NavigationView {
+                List {
+                    ForEach (store.allLogs) { thing in
+                        VStack (alignment: .leading) {
+                            HStack {
+                                Text("\(thing.date) , \(thing.time)")
+                            }
+                            Text(thing.notes)
+                                .multilineTextAlignment(.leading)
                         }
-                        Text(thing.notes)
-                            .multilineTextAlignment(.leading)
                     }
+                }.navigationBarTitle(Text("Think AGAIN!"))
+            }
+            VStack {
+                Image("Logo")
+                Spacer()
+            }
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {self.showAccountView.toggle()}) {
+                        Image(systemName: "person.fill")
+                        .renderingMode(.original)
+                        .font(.system(size: 20, weight: .bold))
+                        .frame(width: 44, height: 44)
+                        .modifier(NavButtons())
+                    }
+                    .sheet(isPresented: $showAccountView) {
+                        AccountView()
+                    }
+                    
+                    Button(action: { self.showHelpCenter.toggle()}) {
+                        Image(systemName: "questionmark")
+                        .renderingMode(.original)
+                        .font(.system(size: 20, weight: .bold))
+                        .modifier(NavButtons())
+                    }
+                    .sheet(isPresented: $showHelpCenter) {
+                        HelpCenter()
+                     }
                 }
-            }.navigationBarTitle(Text("Test"))
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                Spacer()
+            }
         }
     }
 }
