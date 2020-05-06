@@ -17,6 +17,7 @@
 		A5700B412459BAF30074A99A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B402459BAF30074A99A /* Assets.xcassets */; };
 		A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B432459BAF30074A99A /* Preview Assets.xcassets */; };
 		A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5700B452459BAF30074A99A /* LaunchScreen.storyboard */; };
+		A5CDB2F82462F7C900E37C00 /* ListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CDB2F72462F7C900E37C00 /* ListStore.swift */; };
 		A5DCC595246197530076CE9B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCC594246197530076CE9B /* AccountView.swift */; };
 		A5DF46C3245CFA0E00D42229 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5DF46C2245CFA0E00D42229 /* impact.ttf */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		A5700B432459BAF30074A99A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5700B462459BAF30074A99A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5700B482459BAF30074A99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5CDB2F72462F7C900E37C00 /* ListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStore.swift; sourceTree = "<group>"; };
 		A5DCC594246197530076CE9B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A5DF46C2245CFA0E00D42229 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
 				A546EC982460CD290048E44B /* TimerView.swift */,
 				A546EC9A2460CD390048E44B /* LogListView.swift */,
+				A5CDB2F72462F7C900E37C00 /* ListStore.swift */,
 				A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */,
 				A5DCC594246197530076CE9B /* AccountView.swift */,
 				A546EC9E2460CD6B0048E44B /* HelpCenter.swift */,
@@ -189,6 +192,7 @@
 				A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */,
 				A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */,
 				A546EC9B2460CD390048E44B /* LogListView.swift in Sources */,
+				A5CDB2F82462F7C900E37C00 /* ListStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct LogListView: View {
+    
+    @ObservedObject var logs = ListStore()
+    
     var body: some View {
-        Text("Hello, World!")
+        List (logs.allLogs) { thing in
+            VStack {
+                HStack {
+                    Text("")
+                }
+            }
+        }
     }
 }
 
@@ -30,6 +39,6 @@ struct log {
 
 
 
-var thing: [log] = [
+var things: [log] = [
     log(date: "Jan 1", time: "10 m", notes: "Things to say")
 ]
