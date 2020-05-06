@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LogListView: View {
     
-    @ObservedObject var store = ListStore()
+    @ObservedObject var store = LogListStore()
     
     var body: some View {
         NavigationView {
