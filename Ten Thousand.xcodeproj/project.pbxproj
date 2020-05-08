@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A52FF9692462FC4000220713 /* LogListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FF9682462FC4000220713 /* LogListStore.swift */; };
 		A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC962460CCAD0048E44B /* MainTabbedView.swift */; };
 		A546EC992460CD290048E44B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC982460CD290048E44B /* TimerView.swift */; };
 		A546EC9B2460CD390048E44B /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9A2460CD390048E44B /* LogListView.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A52FF9682462FC4000220713 /* LogListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListStore.swift; sourceTree = "<group>"; };
 		A546EC962460CCAD0048E44B /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		A546EC982460CD290048E44B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A546EC9A2460CD390048E44B /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
 				A546EC982460CD290048E44B /* TimerView.swift */,
 				A546EC9A2460CD390048E44B /* LogListView.swift */,
-				A52FF9682462FC4000220713 /* LogListStore.swift */,
 				A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */,
 				A5DCC594246197530076CE9B /* AccountView.swift */,
 				A546EC9E2460CD6B0048E44B /* HelpCenter.swift */,
@@ -208,7 +205,6 @@
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
 				A546EC992460CD290048E44B /* TimerView.swift in Sources */,
 				A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */,
-				A52FF9692462FC4000220713 /* LogListStore.swift in Sources */,
 				A5DCC595246197530076CE9B /* AccountView.swift in Sources */,
 				A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */,
 				A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */,

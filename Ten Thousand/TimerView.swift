@@ -52,7 +52,7 @@ struct TimerView: View {
             
             VStack {
                 Text("00:00:00")
-                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .font(.system(.largeTitle, design: .rounded)).bold()
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 10)
                 HStack (spacing: 20){
