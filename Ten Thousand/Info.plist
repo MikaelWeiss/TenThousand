@@ -58,7 +58,6 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF-Pro-Rounded-Medium.otf</string>
 		<string>impact.ttf</string>
 	</array>
 </dict>

@@ -17,7 +17,8 @@ struct LogListView: View {
     var body: some View {
         ZStack {
             
-            NavigationView {
+            
+            ZStack (alignment: .top) {
                 List {
                     ForEach (store.allLogs) { thing in
                         VStack (alignment: .leading) {
@@ -28,8 +29,14 @@ struct LogListView: View {
                                 .multilineTextAlignment(.leading)
                         }
                     }
-                }.navigationBarTitle(Text("Think AGAIN!"))
+                }.offset(y: 88)
+                
+                Color(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 88)
+                
             }
+            
             VStack {
                 Image("Logo")
                 Spacer()
@@ -39,10 +46,10 @@ struct LogListView: View {
                     Spacer()
                     Button(action: {self.showAccountView.toggle()}) {
                         Image(systemName: "person.fill")
-                        .renderingMode(.original)
-                        .font(.system(size: 20, weight: .bold))
-                        .frame(width: 44, height: 44)
-                        .modifier(NavButtons())
+                            .renderingMode(.original)
+                            .font(.system(size: 20, weight: .bold))
+                            .frame(width: 44, height: 44)
+                            .modifier(NavButtons())
                     }
                     .sheet(isPresented: $showAccountView) {
                         AccountView()
@@ -50,13 +57,13 @@ struct LogListView: View {
                     
                     Button(action: { self.showHelpCenter.toggle()}) {
                         Image(systemName: "questionmark")
-                        .renderingMode(.original)
-                        .font(.system(size: 20, weight: .bold))
-                        .modifier(NavButtons())
+                            .renderingMode(.original)
+                            .font(.system(size: 20, weight: .bold))
+                            .modifier(NavButtons())
                     }
                     .sheet(isPresented: $showHelpCenter) {
                         HelpCenter()
-                     }
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal)

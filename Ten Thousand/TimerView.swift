@@ -51,9 +51,8 @@ struct TimerView: View {
             }
             
             VStack {
-                Text("Does")
-                    .font(.custom("SF-Pro-Rounded-Medium", size: 40))     //Not working. I don't know why.
-                    .font(.system(size: 40, weight: .bold))
+                Text("00:00:00")
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 10)
                 HStack (spacing: 20){
