@@ -60,18 +60,23 @@ struct TimerView: View {
                     .frame(maxWidth: .infinity)
                     .onReceive(timer) { value in
                         if self.timerRunning {
-                            self.minutes += 1
-                            print("It worked!")
-                            print(self.minutes)
+                            self.seconds += 1
+                            if self.seconds == 60 {
+                                self.minutes += 1
+                                self.seconds = 0
+                            }
+                            if self.minutes == 60 {
+                                self.hours += 1
+                                self.minutes = 0
+                            }
                         }
-                        print(self.timerRunning)
                 }
                 HStack (spacing: 20){
                     Button(action: {self.timerRunning.toggle()}) {
                         Image(systemName: timerRunning ? "pause.fill" : "play.fill")
                     }
                     .modifier(MainButton())
-                    Button(action: {self.seconds = 0; self.minutes = 0; self.hours = 0}) {
+                    Button(action: {self.seconds = 0; self.minutes = 0; self.hours = 0; self.timerRunning = false}) {
                         Image(systemName: "gobackward")
                             .font(.system(size: 16, weight: .heavy))
                     }.modifier(MainButton())
