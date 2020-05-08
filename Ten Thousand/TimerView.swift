@@ -16,6 +16,7 @@ struct TimerView: View {
     @State var seconds = 0
     @State var minutes = 0
     @State var hours = 0
+//TODO: Timer stops working when you switch between screens. FIX!
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -91,34 +92,6 @@ struct TimerView_Previews: PreviewProvider {
         TimerView()
     }
 }
-
-
-
-struct MainButton: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        .frame(width: 50, height: 50)
-        .foregroundColor(.white)
-        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1960784314, green: 0.7725490196, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
-        .clipShape(Circle())
-        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
-    }
-}
-
-struct NavButtons: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        .frame(width: 44, height: 44)
-        .background(Color.white)
-        .clipShape(Circle())
-        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
-    }
-}
-
-
-
 
 
 

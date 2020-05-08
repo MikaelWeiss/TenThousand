@@ -13,12 +13,13 @@
 		A546EC9D2460CD5D0048E44B /* UpdateLogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */; };
 		A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9E2460CD6B0048E44B /* HelpCenter.swift */; };
 		A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E9C872463565600BE88FD /* DurationPickerView.swift */; };
-		A56E9C8D246358A700BE88FD /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56E9C8C246358A700BE88FD /* Storyboard.storyboard */; };
 		A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3A2459BAF20074A99A /* AppDelegate.swift */; };
 		A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3C2459BAF20074A99A /* SceneDelegate.swift */; };
 		A5700B412459BAF30074A99A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B402459BAF30074A99A /* Assets.xcassets */; };
 		A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B432459BAF30074A99A /* Preview Assets.xcassets */; };
 		A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5700B452459BAF30074A99A /* LaunchScreen.storyboard */; };
+		A58296BC24661806008443E0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296BB24661806008443E0 /* MainButton.swift */; };
+		A58296C3246618FD008443E0 /* NavButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296C2246618FD008443E0 /* NavButtons.swift */; };
 		A5C557CA2465CE780002D442 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C557C92465CE780002D442 /* Insights.swift */; };
 		A5DCC595246197530076CE9B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCC594246197530076CE9B /* AccountView.swift */; };
 		A5DF46C3245CFA0E00D42229 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5DF46C2245CFA0E00D42229 /* impact.ttf */; };
@@ -31,7 +32,6 @@
 		A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogListView.swift; sourceTree = "<group>"; };
 		A546EC9E2460CD6B0048E44B /* HelpCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenter.swift; sourceTree = "<group>"; };
 		A56E9C872463565600BE88FD /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
-		A56E9C8C246358A700BE88FD /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		A5700B372459BAF20074A99A /* Ten Thousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ten Thousand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5700B3A2459BAF20074A99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5700B3C2459BAF20074A99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		A5700B432459BAF30074A99A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5700B462459BAF30074A99A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5700B482459BAF30074A99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A58296BB24661806008443E0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		A58296C2246618FD008443E0 /* NavButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtons.swift; sourceTree = "<group>"; };
 		A5C557C92465CE780002D442 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		A5DCC594246197530076CE9B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A5DF46C2245CFA0E00D42229 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
@@ -100,7 +102,7 @@
 				A5DCC594246197530076CE9B /* AccountView.swift */,
 				A546EC9E2460CD6B0048E44B /* HelpCenter.swift */,
 				A5C557C92465CE780002D442 /* Insights.swift */,
-				A56E9C8C246358A700BE88FD /* Storyboard.storyboard */,
+				A58296BD24661814008443E0 /* Modifiers */,
 				A56E9C8B2463581100BE88FD /* PickerView */,
 				A5700B482459BAF30074A99A /* Info.plist */,
 				A51AE2CE245E2D370081C891 /* Supporting Files */,
@@ -116,6 +118,15 @@
 				A5700B432459BAF30074A99A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A58296BD24661814008443E0 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				A58296BB24661806008443E0 /* MainButton.swift */,
+				A58296C2246618FD008443E0 /* NavButtons.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		A5DF46C1245CF9EF00D42229 /* Fonts */ = {
@@ -188,7 +199,6 @@
 				A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */,
 				A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */,
 				A5700B412459BAF30074A99A /* Assets.xcassets in Resources */,
-				A56E9C8D246358A700BE88FD /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,10 +212,12 @@
 				A546EC9D2460CD5D0048E44B /* UpdateLogListView.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
+				A58296C3246618FD008443E0 /* NavButtons.swift in Sources */,
 				A546EC992460CD290048E44B /* TimerView.swift in Sources */,
 				A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */,
 				A5C557CA2465CE780002D442 /* Insights.swift in Sources */,
 				A5DCC595246197530076CE9B /* AccountView.swift in Sources */,
+				A58296BC24661806008443E0 /* MainButton.swift in Sources */,
 				A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */,
 				A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */,
 				A546EC9B2460CD390048E44B /* LogListView.swift in Sources */,
