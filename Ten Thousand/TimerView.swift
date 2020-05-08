@@ -13,6 +13,10 @@ struct TimerView: View {
     @State var showHelpCenter = false
     @State var showAccountView = false
     @State var timerRunning = false
+    @State var seconds = 0
+    @State var minutes = 0
+    @State var hours = 0
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {
@@ -50,16 +54,24 @@ struct TimerView: View {
                 Spacer()
             }
             
-            VStack {
-                Text("00:00:00")
-                    .font(.system(.largeTitle, design: .rounded)).bold()
+            VStack (spacing: 20) {
+                Text("\(hours) : \(minutes). \(seconds)")
+                    .font(.system(size: 40, weight: .heavy, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .padding(.bottom, 10)
+                    .onReceive(timer) { value in
+                        if self.timerRunning {
+                            self.minutes += 1
+                            print("It worked!")
+                            print(self.minutes)
+                        }
+                        print(self.timerRunning)
+                }
                 HStack (spacing: 20){
                     Button(action: {self.timerRunning.toggle()}) {
                         Image(systemName: timerRunning ? "pause.fill" : "play.fill")
-                    }.modifier(MainButton())
-                    Button(action: {}) {
+                    }
+                    .modifier(MainButton())
+                    Button(action: {self.seconds = 0; self.minutes = 0; self.hours = 0}) {
                         Image(systemName: "gobackward")
                             .font(.system(size: 16, weight: .heavy))
                     }.modifier(MainButton())
@@ -98,4 +110,15 @@ struct NavButtons: ViewModifier {
         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
     }
+}
+
+
+
+
+
+
+struct Time {
+    var hour: Int
+    var minute: Int
+    var second: Int = 0
 }
