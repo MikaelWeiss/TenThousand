@@ -17,21 +17,10 @@ struct AccountView: View {
             TitleView(loggedIn: $loggedIn, loggingIn: $loggingIn)
                 .padding(.top, 16)
             VStack (alignment: .center, spacing: 5) {
-                ZStack (alignment: .center) {
-                    Circle().size(width: 70, height: 70)
-                        .foregroundColor(.white)
-                        .shadow(color: .black, radius: 10, x: 0, y: 0).opacity(0.1)
-                    Image(systemName: "person.fill")
-                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
-                        .font(.system(size: 45))
-                    Image(systemName: "plus")
-                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
-                        .font(.system(size: 25, weight: .bold, design: .rounded))
-                        .offset(x: 25, y: -25)
-                }
-                .frame(width: 70, height: 70)
-                
+                AddProfilePicture()
+                //TODO: Add the account login/signup fields
             }
+            //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
         }
     }
 }
@@ -51,5 +40,23 @@ struct TitleView: View {
                 .font(.system(.largeTitle, design: .rounded)).bold()
             Spacer()
         }
+    }
+}
+
+struct AddProfilePicture: View {
+    var body: some View {
+        ZStack (alignment: .center) {
+            Circle().size(width: 70, height: 70)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 10, x: 0, y: 0).opacity(0.1)
+            Image(systemName: "person.fill")
+                .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
+                .font(.system(size: 45))
+            Image(systemName: "plus")
+                .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
+                .font(.system(size: 25, weight: .bold, design: .rounded))
+                .offset(x: 25, y: -25)
+        }
+        .frame(width: 70, height: 70)
     }
 }
