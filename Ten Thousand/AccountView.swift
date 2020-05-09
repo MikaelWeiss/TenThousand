@@ -11,6 +11,10 @@ import SwiftUI
 struct AccountView: View {
     @State private var loggedIn: Bool = false
     @State private var loggingIn = true
+    @State private var name = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var confirmPassword = ""
     
     var body: some View {
         ZStack {
@@ -19,6 +23,19 @@ struct AccountView: View {
             VStack (alignment: .center, spacing: 5) {
                 AddProfilePicture()
                 //TODO: Add the account login/signup fields
+                VStack {
+                    TextField("Name", text: $name)
+                    Divider()
+                    TextField("Email", text: $email)
+                    Divider()
+                    TextField("Password", text: $password)
+                    Divider()
+                    TextField("Conform Password", text: $confirmPassword)
+                    Divider()
+                }
+                .frame(width: 350)
+                .padding()
+                
             }
             //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
         }
