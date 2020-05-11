@@ -20,22 +20,12 @@ struct AccountView: View {
         ZStack {
             TitleView(loggedIn: $loggedIn, loggingIn: $loggingIn)
                 .padding(.top, 16)
-            VStack (alignment: .center, spacing: 5) {
+            VStack (alignment: .center) {
                 AddProfilePicture()
-                //TODO: Add the account login/signup fields
-                VStack {
-                    TextField("Name", text: $name)
-                    Divider()
-                    TextField("Email", text: $email)
-                    Divider()
-                    TextField("Password", text: $password)
-                    Divider()
-                    TextField("Conform Password", text: $confirmPassword)
-                    Divider()
-                }
-                .frame(width: 350)
-                .padding()
-                
+                AccountInputTextField(title: "Name: ", textFieldInput: $name)
+                AccountInputTextField(title: "Email: ", textFieldInput: $email)
+                AccountInputTextField(title: "Password: ", textFieldInput: $password)
+                AccountInputTextField(title: "Verify Password", textFieldInput: $confirmPassword)
             }
             //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
         }
@@ -75,5 +65,26 @@ struct AddProfilePicture: View {
                 .offset(x: 25, y: -25)
         }
         .frame(width: 70, height: 70)
+    }
+}
+
+struct AccountInputTextField: View {
+    var title: String
+    @Binding var textFieldInput: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .padding(.leading)
+            TextField("", text: $textFieldInput)
+                .frame(height: 44)
+                .padding(.horizontal, 16)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
+            
+            
+        }
+        .padding()
     }
 }
