@@ -8,26 +8,80 @@
 
 import SwiftUI
 
-struct AccountView: View {
-    @State private var loggedIn: Bool = false
-    @State private var loggingIn = true
+struct AccountView: View
+{
+    @State private var loggedIn = false
+    @State private var signingUp = false
+    @State private var forgotPassword = false
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
     
+    
+    
     var body: some View {
         ZStack {
-            TitleView(loggedIn: $loggedIn, loggingIn: $loggingIn)
+            TitleView(loggedIn: $loggedIn, signingUp: $signingUp)
                 .padding(.top, 16)
-            VStack (alignment: .center) {
+            VStack (alignment: .center, spacing: 16) {
                 AddProfilePicture()
-                AccountInputTextField(title: "Name: ", textFieldInput: $name)
-                AccountInputTextField(title: "Email: ", textFieldInput: $email)
-                AccountInputTextField(title: "Password: ", textFieldInput: $password)
-                AccountInputTextField(title: "Verify Password", textFieldInput: $confirmPassword)
+                VStack {
+                    TextField("Name", text: $name).frame(height: 35)
+                    Divider()
+                    TextField("Email", text: $email).frame(height: 35)
+                    Divider()
+                    TextField("Password", text: $password).frame(height: 35)
+                    if !signingUp {
+                        Divider()
+                        TextField("Conform Password", text: $confirmPassword).frame(height: 35)
+                    } else {
+                        EmptyView()
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .frame(width: 300)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
             }
             //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
+            VStack {
+                Spacer()
+                HStack (spacing: 16) {
+                    Button(action: { self.signingUp.toggle() }) {
+                        Text(self.signingUp ? "Login" : "Sign Up")
+                            .foregroundColor(Color.black.opacity(0.9))
+                    }
+                    
+                    if !signingUp {
+                        Button(action: { self.forgotPassword.toggle() }) {
+                            Text("Forgot Password?")
+                                .foregroundColor(Color.black.opacity(0.9))
+                        }
+                    } else {
+                        EmptyView()
+                    }
+                    Spacer()
+                }
+                .padding()
+            }
+            VStack {
+                Spacer()
+                Button(action: {}) {
+                    HStack {
+                        Spacer()
+                        Text("Update")
+                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1)))
+                        .frame(width: 100, height: 50)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 40, style: .circular))
+                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
+                            .offset(x: -16, y: -16)
+                    }
+                }
+            }
         }
     }
 }
@@ -40,10 +94,11 @@ struct AccountView_Previews: PreviewProvider {
 
 struct TitleView: View {
     @Binding var loggedIn: Bool
-    @Binding var loggingIn: Bool
+    @Binding var signingUp: Bool
+    
     var body: some View {
         VStack {
-            Text(loggedIn ? "Account" : loggingIn ? "Login" : "Sign Up")
+            Text(loggedIn ? "Account" : signingUp ? "Login" : "Sign Up")
                 .font(.system(.largeTitle, design: .rounded)).bold()
             Spacer()
         }
@@ -68,23 +123,7 @@ struct AddProfilePicture: View {
     }
 }
 
-struct AccountInputTextField: View {
-    var title: String
-    @Binding var textFieldInput: String
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .padding(.leading)
-            TextField("", text: $textFieldInput)
-                .frame(height: 44)
-                .padding(.horizontal, 16)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
-            
-            
-        }
-        .padding()
-    }
-}
+
+
+
+

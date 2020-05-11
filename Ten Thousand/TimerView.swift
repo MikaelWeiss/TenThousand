@@ -16,6 +16,8 @@ struct TimerView: View {
     @State var seconds = 0
     @State var minutes = 0
     @State var hours = 0
+    
+    
 //TODO: Timer stops working when you switch between screens. FIX!
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
