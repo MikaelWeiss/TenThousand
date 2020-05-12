@@ -49,7 +49,7 @@ struct AccountView: View
             //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
             VStack {
                 Spacer()
-                HStack (spacing: 16) {
+                HStack {
                     Button(action: { self.signingUp.toggle() }) {
                         Text(self.signingUp ? "Login" : "Sign Up")
                             .foregroundColor(Color.black.opacity(0.9))
@@ -64,23 +64,16 @@ struct AccountView: View
                         EmptyView()
                     }
                     Spacer()
-                }
-                .padding()
-            }
-            VStack {
-                Spacer()
-                Button(action: {}) {
-                    HStack {
-                        Spacer()
+                    Button(action: {}) {
                         Text("Update")
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1)))
                         .frame(width: 100, height: 50)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 40, style: .circular))
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
-                            .offset(x: -16, y: -16)
+                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
                     }
                 }
+                .padding()
             }
         }
     }
