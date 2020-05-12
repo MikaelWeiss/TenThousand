@@ -17,15 +17,28 @@ struct AccountView: View
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var image: Image?
+    @State private var showingImagePicker = false
     
     
     
     var body: some View {
         ZStack {
+            VStack {
+                image?
+                .resizable()
+                .scaledToFit()
+                Button("Select Image") {
+                    
+                }
+            }
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker()
+            }
             TitleView(loggedIn: $loggedIn, signingUp: $signingUp)
                 .padding(.top, 16)
             VStack (alignment: .center, spacing: 16) {
-                AddProfilePicture()
+                AddProfilePicture(showingImagePicker: self.$showingImagePicker)
                 VStack {
                     TextField("Name", text: $name).frame(height: 35)
                     Divider()
@@ -99,6 +112,8 @@ struct TitleView: View {
 }
 
 struct AddProfilePicture: View {
+    @Binding var showingImagePicker: Bool
+    
     var body: some View {
         ZStack (alignment: .center) {
             Circle().size(width: 70, height: 70)
@@ -113,6 +128,9 @@ struct AddProfilePicture: View {
                 .offset(x: 25, y: -25)
         }
         .frame(width: 70, height: 70)
+        .onTapGesture {
+            self.showingImagePicker = true
+        }
     }
 }
 
