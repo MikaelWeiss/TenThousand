@@ -10,8 +10,7 @@ import SwiftUI
 
 struct AccountView: View
 {
-    @State private var loggedIn = false
-    @State private var signingUp = false
+    @State private var accountStatus = accountStatusEnum.signingUp
     @State private var forgotPassword = false
     @State private var name = ""
     @State private var email = ""
@@ -20,22 +19,9 @@ struct AccountView: View
     @State private var image: Image?
     @State private var showingImagePicker = false
     
-    
-    
     var body: some View {
         ZStack {
-            VStack {
-                image?
-                .resizable()
-                .scaledToFit()
-                Button("Select Image") {
-                    
-                }
-            }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker()
-            }
-            TitleView(loggedIn: $loggedIn, signingUp: $signingUp)
+            TitleView(accountStatus: $accountStatus)
                 .padding(.top, 16)
             VStack (alignment: .center, spacing: 16) {
                 AddProfilePicture(showingImagePicker: self.$showingImagePicker)
@@ -45,7 +31,7 @@ struct AccountView: View
                     TextField("Email", text: $email).frame(height: 35)
                     Divider()
                     TextField("Password", text: $password).frame(height: 35)
-                    if !signingUp {
+                    if accountStatus == .signingUp {
                         Divider()
                         TextField("Conform Password", text: $confirmPassword).frame(height: 35)
                     } else {
@@ -63,12 +49,18 @@ struct AccountView: View
             VStack {
                 Spacer()
                 HStack {
-                    Button(action: { self.signingUp.toggle() }) {
-                        Text(self.signingUp ? "Login" : "Sign Up")
+                    Button(action: {
+                        if self.accountStatus == .loggingIn {
+                            self.accountStatus = .signingUp
+                        } else if self.accountStatus == .signingUp {
+                            self.accountStatus = .loggingIn
+                        }
+                    }) {
+                        Text(self.accountStatus == .loggingIn ? "Sign Up" : "Login")
                             .foregroundColor(Color.black.opacity(0.9))
                     }
                     
-                    if !signingUp {
+                    if accountStatus == .signingUp {
                         Button(action: { self.forgotPassword.toggle() }) {
                             Text("Forgot Password?")
                                 .foregroundColor(Color.black.opacity(0.9))
@@ -78,7 +70,7 @@ struct AccountView: View
                     }
                     Spacer()
                     Button(action: {}) {
-                        Text("Update")
+                        Text(self.accountStatus == .loggedIn ? "Update Account" : self.accountStatus == .signingUp ? "Sign Up" : "Log In")
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1)))
                         .frame(width: 100, height: 50)
                         .background(Color.white)
@@ -99,12 +91,11 @@ struct AccountView_Previews: PreviewProvider {
 }
 
 struct TitleView: View {
-    @Binding var loggedIn: Bool
-    @Binding var signingUp: Bool
+    @Binding var accountStatus: accountStatusEnum
     
     var body: some View {
         VStack {
-            Text(loggedIn ? "Account" : signingUp ? "Login" : "Sign Up")
+            Text(accountStatus == .loggedIn ? "Account" : accountStatus == .signingUp ? "Sign Up" : "Login")
                 .font(.system(.largeTitle, design: .rounded)).bold()
             Spacer()
         }
@@ -138,3 +129,8 @@ struct AddProfilePicture: View {
 
 
 
+enum accountStatusEnum {
+    case loggedIn
+    case loggingIn
+    case signingUp
+}

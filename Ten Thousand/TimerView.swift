@@ -58,7 +58,7 @@ struct TimerView: View {
             }
             
             VStack (spacing: 20) {
-                Text("\(hours) : \(minutes). \(seconds)")
+                Text("\(hours) : \(minutes) : \(seconds)")
                     .font(.system(size: 40, weight: .heavy, design: .rounded))
                     .frame(maxWidth: .infinity)
                     .onReceive(timer) { value in
