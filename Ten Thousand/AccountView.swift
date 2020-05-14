@@ -26,16 +26,18 @@ struct AccountView: View
             VStack (alignment: .center, spacing: 16) {
                 AddProfilePicture(showingImagePicker: self.$showingImagePicker)
                 VStack {
+                    
                     TextField("Name", text: $name).frame(height: 35)
                     Divider()
+                    
                     TextField("Email", text: $email).frame(height: 35)
                     Divider()
+                    
                     TextField("Password", text: $password).frame(height: 35)
+                    
                     if accountStatus == .signingUp {
                         Divider()
                         TextField("Conform Password", text: $confirmPassword).frame(height: 35)
-                    } else {
-                        EmptyView()
                     }
                 }
                 .padding(.horizontal)
@@ -48,27 +50,33 @@ struct AccountView: View
             //TODO: Add the Sign up, forgot password, and Login/signup/update profile Buttons
             VStack {
                 Spacer()
+                
                 HStack {
+                    
                     Button(action: {
                         if self.accountStatus == .loggingIn {
-                            self.accountStatus = .signingUp
+                            withAnimation() {
+                                self.accountStatus = .signingUp
+                            }
                         } else if self.accountStatus == .signingUp {
-                            self.accountStatus = .loggingIn
+                            withAnimation() {
+                                self.accountStatus = .loggingIn
+                            }
                         }
                     }) {
                         Text(self.accountStatus == .loggingIn ? "Sign Up" : "Login")
                             .foregroundColor(Color.black.opacity(0.9))
                     }
                     
-                    if accountStatus == .signingUp {
+                    if accountStatus == .loggingIn {
                         Button(action: { self.forgotPassword.toggle() }) {
                             Text("Forgot Password?")
                                 .foregroundColor(Color.black.opacity(0.9))
                         }
-                    } else {
-                        EmptyView()
                     }
+                    
                     Spacer()
+                    
                     Button(action: {}) {
                         Text(self.accountStatus == .loggedIn ? "Update Account" : self.accountStatus == .signingUp ? "Sign Up" : "Log In")
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1)))
