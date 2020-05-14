@@ -53,7 +53,7 @@ var things = [
 
 
 struct TopBar: View {
-    @State private var showHelpCenter = false
+    @State private var showEditLogView = false
     @State private var showAccountView = false
     
     
@@ -77,14 +77,14 @@ struct TopBar: View {
                         AccountView()
                     }
                     
-                    Button(action: { self.showHelpCenter.toggle()}) {
-                        Image(systemName: "questionmark")
+                    Button(action: { self.showEditLogView.toggle()}) {
+                        Image(systemName: "plus")
                             .renderingMode(.original)
                             .font(.system(size: 20, weight: .bold))
                             .modifier(NavButtons())
                     }
-                    .sheet(isPresented: $showHelpCenter) {
-                        HelpCenter()
+                    .sheet(isPresented: $showEditLogView) {
+                        UpdateLogListView()
                     }
                 }
                 .frame(maxWidth: .infinity)

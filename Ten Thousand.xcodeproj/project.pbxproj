@@ -70,12 +70,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A56E9C8B2463581100BE88FD /* PickerView */ = {
+		A56E9C8B2463581100BE88FD /* UIViewRepresentables */ = {
 			isa = PBXGroup;
 			children = (
+				A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */,
 				A56E9C872463565600BE88FD /* DurationPickerView.swift */,
 			);
-			path = PickerView;
+			path = UIViewRepresentables;
 			sourceTree = "<group>";
 		};
 		A5700B2E2459BAF20074A99A = {
@@ -102,11 +103,10 @@
 				A546EC9A2460CD390048E44B /* LogListView.swift */,
 				A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */,
 				A5DCC594246197530076CE9B /* AccountView.swift */,
-				A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */,
 				A546EC9E2460CD6B0048E44B /* HelpCenter.swift */,
 				A5C557C92465CE780002D442 /* Insights.swift */,
 				A58296BD24661814008443E0 /* Modifiers */,
-				A56E9C8B2463581100BE88FD /* PickerView */,
+				A56E9C8B2463581100BE88FD /* UIViewRepresentables */,
 				A5700B482459BAF30074A99A /* Info.plist */,
 				A51AE2CE245E2D370081C891 /* Supporting Files */,
 				A5DF46C1245CF9EF00D42229 /* Fonts */,

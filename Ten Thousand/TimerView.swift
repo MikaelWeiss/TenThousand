@@ -21,6 +21,7 @@ struct TimerView: View {
 //TODO: Timer stops working when you switch between screens. FIX!
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    
     var body: some View {
         ZStack {
             VStack {
