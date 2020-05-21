@@ -28,8 +28,6 @@ struct LogListView: View {
                 }
             }
         }
-        
-
     }
 }
 

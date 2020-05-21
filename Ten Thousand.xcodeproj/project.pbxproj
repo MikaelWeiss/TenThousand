@@ -20,6 +20,7 @@
 		A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5700B452459BAF30074A99A /* LaunchScreen.storyboard */; };
 		A58296BC24661806008443E0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296BB24661806008443E0 /* MainButton.swift */; };
 		A58296C3246618FD008443E0 /* NavButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296C2246618FD008443E0 /* NavButtons.swift */; };
+		A5A076ED2470B8D100F5B777 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A076EC2470B8D100F5B777 /* BlurView.swift */; };
 		A5A8D754246A3B3A000F3AB6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */; };
 		A5C557CA2465CE780002D442 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C557C92465CE780002D442 /* Insights.swift */; };
 		A5DCC595246197530076CE9B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCC594246197530076CE9B /* AccountView.swift */; };
@@ -42,6 +43,7 @@
 		A5700B482459BAF30074A99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58296BB24661806008443E0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		A58296C2246618FD008443E0 /* NavButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtons.swift; sourceTree = "<group>"; };
+		A5A076EC2470B8D100F5B777 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A5C557C92465CE780002D442 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		A5DCC594246197530076CE9B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				A58296BB24661806008443E0 /* MainButton.swift */,
 				A58296C2246618FD008443E0 /* NavButtons.swift */,
+				A5A076EC2470B8D100F5B777 /* BlurView.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				A5A8D754246A3B3A000F3AB6 /* ImagePicker.swift in Sources */,
 				A546EC9D2460CD5D0048E44B /* UpdateLogListView.swift in Sources */,
+				A5A076ED2470B8D100F5B777 /* BlurView.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
 				A58296C3246618FD008443E0 /* NavButtons.swift in Sources */,
