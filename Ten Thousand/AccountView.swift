@@ -8,15 +8,13 @@
 
 import SwiftUI
 
-struct AccountView: View
-{
+struct AccountView: View {
     @State private var accountStatus = accountStatusEnum.signingUp
     @State private var forgotPassword = false
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-    @State private var image: Image?
     @State private var showingImagePicker = false
     
     var body: some View {
@@ -55,6 +53,7 @@ struct AccountView: View
                     
                     Button(action: {
                         if self.accountStatus == .loggingIn {
+                            self.confirmPassword = ""
                             withAnimation() {
                                 self.accountStatus = .signingUp
                             }
@@ -66,6 +65,8 @@ struct AccountView: View
                     }) {
                         Text(self.accountStatus == .loggingIn ? "Sign Up" : "Login")
                             .foregroundColor(Color.black.opacity(0.9))
+                            .minimumScaleFactor(0.5)
+                            .animation(.none)
                     }
                     
                     if accountStatus == .loggingIn {
@@ -85,9 +86,13 @@ struct AccountView: View
                         .clipShape(RoundedRectangle(cornerRadius: 40, style: .circular))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 0)
                     }
+                    .minimumScaleFactor(0.5)
                 }
                 .padding()
             }
+        }
+        .onAppear() {
+            
         }
     }
 }
@@ -105,6 +110,7 @@ struct TitleView: View {
         VStack {
             Text(accountStatus == .loggedIn ? "Account" : accountStatus == .signingUp ? "Sign Up" : "Login")
                 .font(.system(.largeTitle, design: .rounded)).bold()
+                .minimumScaleFactor(0.5)
             Spacer()
         }
     }
@@ -112,30 +118,61 @@ struct TitleView: View {
 
 struct AddProfilePicture: View {
     @Binding var showingImagePicker: Bool
+    @State private var image: Image? = getImage()
+    @State private var inputImage: UIImage?
     
     var body: some View {
         ZStack (alignment: .center) {
             Circle().size(width: 70, height: 70)
                 .foregroundColor(.white)
                 .shadow(color: .black, radius: 10, x: 0, y: 0).opacity(0.1)
-            Image(systemName: "person.fill")
-                .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
-                .font(.system(size: 45))
-            Image(systemName: "plus")
-                .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
-                .font(.system(size: 25, weight: .bold, design: .rounded))
-                .offset(x: 25, y: -25)
+            if image == nil {
+                ZStack {
+                    Image(systemName: "person.fill")
+                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
+                        .font(.system(size: 45))
+                    Image(systemName: "plus")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
+                    .font(.system(size: 25, weight: .bold, design: .rounded))
+                    .offset(x: 25, y: -25)
+                }
+            } else {
+                image?
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 70, height: 70)
+                    .clipShape(Circle())
+            }
         }
         .frame(width: 70, height: 70)
         .onTapGesture {
             self.showingImagePicker = true
         }
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: self.$inputImage)
+        }
+    }
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        setImageFor(image: inputImage)
+        image = getImage()
     }
 }
 
+func setImageFor(image inputImage: UIImage?) {
+    guard let image = inputImage else { return }
+    guard let imageJPEGData = image.jpegData(compressionQuality: 1.0) else {
+        guard let imagePNGData = image.pngData() else { return }
+        defaults.set(imagePNGData, forKey: "ProfilePicture")
+        return
+    }
+    defaults.set(imageJPEGData, forKey: "ProfilePicture")
+}
 
-
-
+func getImage() -> Image? {
+    guard let imageData = defaults.data(forKey: "ProfilePicture") else { return nil }
+    return Image(uiImage: UIImage(data: imageData)!)
+}
 
 enum accountStatusEnum {
     case loggedIn

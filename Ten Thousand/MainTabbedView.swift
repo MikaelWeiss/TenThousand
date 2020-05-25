@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+let defaults = UserDefaults.standard
+
+
 struct MainTabbedView: View {
     var body: some View {
         TabView() {

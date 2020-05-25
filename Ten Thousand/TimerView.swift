@@ -16,7 +16,7 @@ struct TimerView: View {
     @State var seconds = 0
     @State var minutes = 0
     @State var hours = 0
-    
+    @State private var image: Image? = getImage()
     
 //TODO: Timer stops working when you switch between screens. FIX!
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -33,11 +33,20 @@ struct TimerView: View {
                 HStack {
                     Spacer()
                     Button(action: {self.showAccountView.toggle()}) {
-                        Image(systemName: "person.fill")
-                        .renderingMode(.original)
-                        .font(.system(size: 20, weight: .bold))
-                        .frame(width: 44, height: 44)
-                        .modifier(NavButtons())
+                        if image == nil {
+                            Image(systemName: "person.fill")
+                            .renderingMode(.original)
+                            .font(.system(size: 20, weight: .bold))
+                            .frame(width: 44, height: 44)
+                            .modifier(NavButtons())
+                        } else {
+                            image?
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 44, height: 44)
+                                .clipShape(Circle())
+                        }
                     }
                     .sheet(isPresented: $showAccountView) {
                         AccountView()

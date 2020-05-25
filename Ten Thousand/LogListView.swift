@@ -53,7 +53,7 @@ var things = [
 struct TopBar: View {
     @State private var showEditLogView = false
     @State private var showAccountView = false
-    
+    @State private var image: Image? = getImage()
     
     var body: some View {
         ZStack {
@@ -65,11 +65,20 @@ struct TopBar: View {
                 HStack {
                     Spacer()
                     Button(action: {self.showAccountView.toggle()}) {
-                        Image(systemName: "person.fill")
+                        if image == nil {
+                            Image(systemName: "person.fill")
                             .renderingMode(.original)
                             .font(.system(size: 20, weight: .bold))
                             .frame(width: 44, height: 44)
                             .modifier(NavButtons())
+                        } else {
+                            image?
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 44, height: 44)
+                                .clipShape(Circle())
+                        }
                     }
                     .sheet(isPresented: $showAccountView) {
                         AccountView()
