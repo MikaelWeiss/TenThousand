@@ -22,17 +22,10 @@ class Timer: ObservableObject {
 
 
 class UserSettings: ObservableObject {
-    @Published var profilePicture: Image?
-    @Published var email: String?
-    @Published var password: String?
+    @Published var profilePicture = getImage()
+    @Published var email = getFromUserDefaults(key: "email")
+    @Published var password = getFromUserDefaults(key: "password")
     @Published var accountStatus = accountStatusEnum.signingUp
-    
-//    Not sure if I actually need this init (like I could probably just set the variables to equal what I set them to.
-    init() {
-        self.profilePicture = getImage()
-        self.email = getFromUserDefaults(key: "email")
-        self.password = getFromUserDefaults(key: "password")
-    }
 }
 
 class UserInfo: ObservableObject {
