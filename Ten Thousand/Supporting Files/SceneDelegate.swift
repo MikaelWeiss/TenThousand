@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     var timer = Timer()
-    var userSettings = UserSettings(email: "camp@icloud.com", password: "123456")
+    var userSettings = UserSettings()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -28,7 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView:
-                contentView.environmentObject(timer).environmentObject(userSettings)
+                contentView
+                    .environmentObject(userSettings)
+                    .environmentObject(timer)
             )
             self.window = window
             window.makeKeyAndVisible()

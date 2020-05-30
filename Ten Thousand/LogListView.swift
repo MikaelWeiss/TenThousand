@@ -39,9 +39,9 @@ struct LogListView_Previews: PreviewProvider {
 
 
 struct TopBar: View {
+    @EnvironmentObject var userSettings: UserSettings
     @State private var showEditLogView = false
     @State private var showAccountView = false
-    @State private var image: Image? = getImage()
     
     var body: some View {
         ZStack {
@@ -53,14 +53,14 @@ struct TopBar: View {
                 HStack {
                     Spacer()
                     Button(action: {self.showAccountView.toggle()}) {
-                        if image == nil {
+                        if userSettings.profilePicture == nil {
                             Image(systemName: "person.fill")
                             .renderingMode(.original)
                             .font(.system(size: 20, weight: .bold))
                             .frame(width: 44, height: 44)
                             .modifier(NavButtons())
                         } else {
-                            image?
+                            userSettings.profilePicture!
                                 .renderingMode(.original)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -69,7 +69,7 @@ struct TopBar: View {
                         }
                     }
                     .sheet(isPresented: $showAccountView) {
-                        AccountView()
+                        AccountView().environmentObject(self.userSettings)
                     }
                     
                     Button(action: { self.showEditLogView.toggle()}) {

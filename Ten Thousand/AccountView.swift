@@ -117,6 +117,7 @@ struct TitleView: View {
 }
 
 struct AddProfilePicture: View {
+    @EnvironmentObject var userSettings: UserSettings
     @Binding var showingImagePicker: Bool
     @State private var image: Image? = getImage()
     @State private var inputImage: UIImage?
@@ -126,7 +127,7 @@ struct AddProfilePicture: View {
             Circle().size(width: 70, height: 70)
                 .foregroundColor(.white)
                 .shadow(color: .black, radius: 10, x: 0, y: 0).opacity(0.1)
-            if image == nil {
+            if userSettings.profilePicture == nil {
                 ZStack {
                     Image(systemName: "person.fill")
                         .foregroundColor(Color(#colorLiteral(red: 0, green: 0.568627451, blue: 1, alpha: 1))).opacity(0.9)
@@ -137,7 +138,7 @@ struct AddProfilePicture: View {
                     .offset(x: 25, y: -25)
                 }
             } else {
-                image?
+                userSettings.profilePicture!
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 70, height: 70)
@@ -155,7 +156,7 @@ struct AddProfilePicture: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         setImageFor(image: inputImage)
-        image = getImage()
+        userSettings.profilePicture = getImage()
     }
 }
 
@@ -167,15 +168,4 @@ func setImageFor(image inputImage: UIImage?) {
         return
     }
     defaults.set(imageJPEGData, forKey: "ProfilePicture")
-}
-
-func getImage() -> Image? {
-    guard let imageData = defaults.data(forKey: "ProfilePicture") else { return nil }
-    return Image(uiImage: UIImage(data: imageData)!)
-}
-
-enum accountStatusEnum {
-    case loggedIn
-    case loggingIn
-    case signingUp
 }

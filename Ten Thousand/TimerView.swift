@@ -12,9 +12,7 @@ struct TimerView: View {
     @EnvironmentObject var userSettings: UserSettings
     @State private var showHelpCenter = false
     @State private var showAccountView = false
-    @State private var image: Image? = getImage()
     @State private var timerRunning: Bool = false
-//TODO: Add @EnviornmentObject for the image!!! Maybe for the timer as well.
 //TODO: Timer stops working when you switch between screens. FIX!
     
     var body: some View {
@@ -28,14 +26,14 @@ struct TimerView: View {
                 HStack {
                     Spacer()
                     Button(action: {self.showAccountView.toggle()}) {
-                        if image == nil {
+                        if userSettings.profilePicture == nil {
                             Image(systemName: "person.fill")
-                            .renderingMode(.original)
-                            .font(.system(size: 20, weight: .bold))
-                            .frame(width: 44, height: 44)
-                            .modifier(NavButtons())
+                                .renderingMode(.original)
+                                .font(.system(size: 20, weight: .bold))
+                                .frame(width: 44, height: 44)
+                                .modifier(NavButtons())
                         } else {
-                            image?
+                            userSettings.profilePicture!
                                 .renderingMode(.original)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -44,7 +42,7 @@ struct TimerView: View {
                         }
                     }
                     .sheet(isPresented: $showAccountView) {
-                        AccountView()
+                        AccountView().environmentObject(self.userSettings)
                     }
                     
                     Button(action: { self.showHelpCenter.toggle()}) {

@@ -23,14 +23,15 @@ class Timer: ObservableObject {
 
 class UserSettings: ObservableObject {
     @Published var profilePicture: Image?
-    @Published var email = String()
-    @Published var password = String()
+    @Published var email: String?
+    @Published var password: String?
     @Published var accountStatus = accountStatusEnum.signingUp
     
-    init(email: String, password: String) {
+//    Not sure if I actually need this init (like I could probably just set the variables to equal what I set them to.
+    init() {
         self.profilePicture = getImage()
-        self.email = email
-        self.password = password
+        self.email = getFromUserDefaults(key: "email")
+        self.password = getFromUserDefaults(key: "password")
     }
 }
 
@@ -49,6 +50,30 @@ struct Log: Identifiable {
     var time: String
     var notes: String
 }
+
+
+enum accountStatusEnum {
+    case loggedIn
+    case loggingIn
+    case signingUp
+}
+
+
+func getImage() -> Image? {
+    guard let imageData = defaults.data(forKey: "ProfilePicture") else { return nil }
+    return Image(uiImage: UIImage(data: imageData)!)
+}
+
+func getFromUserDefaults(key: String) -> String? {
+    guard let data = defaults.string(forKey: key) else { return nil }
+    return data
+}
+
+//MARK: - Important variables and constants
+
+
+let defaults = UserDefaults.standard
+
 
 var things = [
     Log(date: "Jan 1", time: "10 m", notes: "Things to say")

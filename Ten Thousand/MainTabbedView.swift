@@ -8,10 +8,9 @@
 
 import SwiftUI
 
-let defaults = UserDefaults.standard
-
-
 struct MainTabbedView: View {
+    @EnvironmentObject var userSettings: UserSettings
+    
     var body: some View {
         TabView() {
         TimerView()
