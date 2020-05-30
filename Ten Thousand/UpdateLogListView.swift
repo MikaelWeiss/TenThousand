@@ -9,11 +9,9 @@
 import SwiftUI
 
 struct UpdateLogListView: View {
-    @State var time = Time(hour: 1, minute: 1)
-    
     
     var body: some View {
-        DurationPickerView(time: $time)
+        DurationPickerView()
     }
 }
 

@@ -38,18 +38,6 @@ struct LogListView_Previews: PreviewProvider {
 }
 
 
-struct Log: Identifiable {
-    var id = UUID()
-    var date: String
-    var time: String
-    var notes: String
-}
-var things = [
-    Log(date: "Jan 1", time: "10 m", notes: "Things to say")
-]
-
-
-
 struct TopBar: View {
     @State private var showEditLogView = false
     @State private var showAccountView = false
@@ -101,3 +89,5 @@ struct TopBar: View {
         }
     }
 }
+
+

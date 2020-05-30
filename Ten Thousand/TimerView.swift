@@ -9,18 +9,13 @@
 import SwiftUI
 
 struct TimerView: View {
-    
-    @State var showHelpCenter = false
-    @State var showAccountView = false
-    @State var timerRunning = false
-    @State var seconds = 0
-    @State var minutes = 0
-    @State var hours = 0
+    @EnvironmentObject var userSettings: UserSettings
+    @State private var showHelpCenter = false
+    @State private var showAccountView = false
     @State private var image: Image? = getImage()
-    
+    @State private var timerRunning: Bool = false
+//TODO: Add @EnviornmentObject for the image!!! Maybe for the timer as well.
 //TODO: Timer stops working when you switch between screens. FIX!
-    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
     
     var body: some View {
         ZStack {
@@ -68,28 +63,17 @@ struct TimerView: View {
             }
             
             VStack (spacing: 20) {
-                Text("\(hours) : \(minutes) : \(seconds)")
+                Text("")
                     .font(.system(size: 40, weight: .heavy, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .onReceive(timer) { value in
-                        if self.timerRunning {
-                            self.seconds += 1
-                            if self.seconds == 60 {
-                                self.minutes += 1
-                                self.seconds = 0
-                            }
-                            if self.minutes == 60 {
-                                self.hours += 1
-                                self.minutes = 0
-                            }
-                        }
-                }
                 HStack (spacing: 20){
                     Button(action: {self.timerRunning.toggle()}) {
                         Image(systemName: timerRunning ? "pause.fill" : "play.fill")
                     }
                     .modifier(MainButton())
-                    Button(action: {self.seconds = 0; self.minutes = 0; self.hours = 0; self.timerRunning = false}) {
+                    Button(action: {
+                         //Save time/reset time
+                         } )  {
                         Image(systemName: "gobackward")
                             .font(.system(size: 16, weight: .heavy))
                     }.modifier(MainButton())
@@ -103,12 +87,4 @@ struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
     }
-}
-
-
-
-struct Time {
-    var hour: Int
-    var minute: Int
-    var second: Int = 0
 }

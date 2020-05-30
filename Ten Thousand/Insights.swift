@@ -10,12 +10,38 @@ import SwiftUI
 
 struct Insights: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List ((0 ... 10), id: \.self) {
+            Text("Row \($0)")
+        }
+        .offset(y: 200)
+        .border(Color.blue, width: 3)
     }
 }
 
 struct Insights_Previews: PreviewProvider {
     static var previews: some View {
-        Insights()
+        Group {
+            List ((0 ... 10), id: \.self) {
+                Text("Row \($0)")
+            }
+            .offset(y: 200)
+            .border(Color.blue, width: 3)
+            .background(Color.black)
+            
+            ScrollView {
+                Text("Text")
+            }
+            .foregroundColor(.white)
+            .offset(y: 200)
+            .border(Color.blue, width: 3)
+            .background(Color.black)
+            
+            Form {
+                Text("Text")
+            }
+            .offset(y: 200)
+            .border(Color.blue, width: 3)
+            .background(Color.black)
+        }
     }
 }
