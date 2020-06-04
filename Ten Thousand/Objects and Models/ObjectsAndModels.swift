@@ -26,7 +26,23 @@ class UserSettings: ObservableObject {
     @Published var name = getFromUserDefaults(key: "name") ?? ""
     @Published var email = getFromUserDefaults(key: "email") ?? ""
     @Published var password = getFromUserDefaults(key: "password") ?? ""
-    @Published var accountStatus = accountStatusEnum.signingUp
+    @Published var accountStatus = getAccountStatusFromUserDefaults() {
+        didSet {
+            switch accountStatus {
+            case .loggedIn:
+                setToUserDefaults(key: "name", value: name)
+                setToUserDefaults(key: "email", value: email)
+                setToUserDefaults(key: "password", value: password)
+            case .loggingIn:
+                name = ""
+                email = ""
+                password = ""
+            case .signingUp:
+                print("signingUp")
+            }
+            setToUserDefaults(key: "accountStatus", value: accountStatus.rawValue)
+        }
+    }
 }
 
 class UserLogs: ObservableObject {
@@ -55,10 +71,10 @@ struct Log: Identifiable {
 }
 
 
-enum accountStatusEnum {
-    case loggedIn
-    case loggingIn
-    case signingUp
+enum accountStatusEnum: String {
+    case loggedIn = "loggedIn"
+    case loggingIn = "loggingIn"
+    case signingUp = "signingUp"
 }
 
 //MARK: - App Wide Functions
@@ -72,6 +88,21 @@ func getFromUserDefaults(key: String) -> String? {
     return data
 }
 
+func setToUserDefaults(key: String, value: String) {
+    defaults.set(value, forKey: key)
+}
+
+func getAccountStatusFromUserDefaults() -> accountStatusEnum {
+    switch (getFromUserDefaults(key: "accountStatus") ?? "signingUp") {
+    case "loggedIn":
+       return .loggedIn
+    case "loggingIn":
+       return .loggingIn
+    default:
+       return .signingUp
+    }
+}
+
 //MARK: - Important variables and constants
 
 
@@ -81,3 +112,6 @@ let defaults = UserDefaults.standard
 var things = [
     Log(date: "Jan 1", time: "10 m", notes: "Things to say")
 ]
+
+
+
