@@ -9,11 +9,9 @@
 import SwiftUI
 
 struct AccountView: View {
+    @EnvironmentObject var userSettings: UserSettings
     @State private var accountStatus = accountStatusEnum.signingUp
     @State private var forgotPassword = false
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
     @State private var confirmPassword = ""
     @State private var showingImagePicker = false
     
@@ -25,13 +23,13 @@ struct AccountView: View {
                 AddProfilePicture(showingImagePicker: self.$showingImagePicker)
                 VStack {
                     
-                    TextField("Name", text: $name).frame(height: 35)
+                    TextField("Name", text: $userSettings.name).frame(height: 35)
                     Divider()
                     
-                    TextField("Email", text: $email).frame(height: 35)
+                    TextField("Email", text: $userSettings.email).frame(height: 35)
                     Divider()
                     
-                    TextField("Password", text: $password).frame(height: 35)
+                    TextField("Password", text: $userSettings.password).frame(height: 35)
                     
                     if accountStatus == .signingUp {
                         Divider()
@@ -99,7 +97,7 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView().environmentObject(UserSettings())
     }
 }
 

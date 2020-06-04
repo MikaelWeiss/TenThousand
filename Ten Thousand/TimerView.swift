@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject var userSettings: UserSettings
+    @EnvironmentObject var timer: ObservedTimer
     @State private var showHelpCenter = false
     @State private var showAccountView = false
     @State private var timerRunning: Bool = false
@@ -83,6 +84,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView().environmentObject(UserSettings())
     }
 }

@@ -15,25 +15,32 @@ struct MainTabbedView: View {
         TabView() {
         TimerView()
             .tabItem {
-                
-                Image(systemName: "clock")
-                    .font(.system(size: 16, weight: .semibold))
-                    .imageScale(.large)
+                VStack {
+                    Image(systemName: "clock")
+                        .font(.system(size: 16, weight: .semibold))
+                        .imageScale(.large)
+                    Text("Timer")
+                }
                 
         }.tag(1)
+            
         LogListView()
             .tabItem {
-                Image(systemName: "list.bullet")
-                .font(.system(size: 16, weight: .semibold))
-                .imageScale(.large)
+                VStack {
+                    Image(systemName: "list.bullet")
+                        .font(.system(size: 16, weight: .semibold))
+                        .imageScale(.large)
+                    Text("Logs")
+                }
                 
         }.tag(2)
+            
         }
     }
 }
 
 struct MainTabbedView_Previews: PreviewProvider {
     static var previews: some View {
-        MainTabbedView()
+        MainTabbedView().environmentObject(UserSettings())
     }
 }

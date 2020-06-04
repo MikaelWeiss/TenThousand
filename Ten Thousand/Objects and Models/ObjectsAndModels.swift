@@ -12,30 +12,40 @@ import SwiftUI
 
 //MARK: - Environment Objects:
 
-class Timer: ObservableObject {
-    @Published var startTime = Date()
-    @Published var currentTime = Date()
-    @Published var timeElapsed = Date()
-    @Published var timerIsRunning = false
+class ObservedTimer: ObservableObject {
+    @Published var timer: Timer
+    
+    init () {
+        let timer = Timer(startDate: Date().addingTimeInterval(-600), endDate: Date())
+        self.timer = timer
+    }
 }
-
-
 
 class UserSettings: ObservableObject {
     @Published var profilePicture = getImage()
-    @Published var email = getFromUserDefaults(key: "email")
-    @Published var password = getFromUserDefaults(key: "password")
+    @Published var name = getFromUserDefaults(key: "name") ?? ""
+    @Published var email = getFromUserDefaults(key: "email") ?? ""
+    @Published var password = getFromUserDefaults(key: "password") ?? ""
     @Published var accountStatus = accountStatusEnum.signingUp
 }
 
-class UserInfo: ObservableObject {
+class UserLogs: ObservableObject {
     @Published var allLogs = [
         Log(date: "Jan 1", time: "10 m", notes: "Things to say")
     ]
 }
 
-//MARK: - Data Structs
+//MARK: - Data Structs and enums
 
+// This is really just for
+struct Timer {
+    var startDate: Date
+    var endDate: Date
+    
+//    func formattedElappsedTime() -> String {
+//        
+//    }
+}
 
 struct Log: Identifiable {
     var id = UUID()
@@ -51,7 +61,7 @@ enum accountStatusEnum {
     case signingUp
 }
 
-
+//MARK: - App Wide Functions
 func getImage() -> Image? {
     guard let imageData = defaults.data(forKey: "ProfilePicture") else { return nil }
     return Image(uiImage: UIImage(data: imageData)!)
