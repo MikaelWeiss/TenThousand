@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject var userSettings: UserSettings
-    @EnvironmentObject var timer: ObservedTimer
+    @ObservedObject var timer = Timer()
     @State private var showHelpCenter = false
     @State private var showAccountView = false
     @State private var timerRunning: Bool = false

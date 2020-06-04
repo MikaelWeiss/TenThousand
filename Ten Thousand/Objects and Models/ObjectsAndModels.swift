@@ -12,12 +12,13 @@ import SwiftUI
 
 //MARK: - Environment Objects:
 
-class ObservedTimer: ObservableObject {
-    @Published var timer: Timer
+class Timer: ObservableObject {
+    @Published var startDate = Date().addingTimeInterval(-600)
+    @Published var endDate = Date()
+    @Published var timerRunning = false
     
-    init () {
-        let timer = Timer(startDate: Date().addingTimeInterval(-600), endDate: Date())
-        self.timer = timer
+    var elappsedTime: TimeInterval {
+        return endDate - startDate
     }
 }
 
@@ -45,30 +46,29 @@ class UserSettings: ObservableObject {
     }
 }
 
-class UserLogs: ObservableObject {
-    @Published var allLogs = [
+
+class ListOfUserLogs: ObservableObject {
+    @Published var currentLog: Int = 0
+    @Published var allLogLists: [UserLogs] = [
+        UserLogs()
+    ]
+}
+
+struct UserLogs {
+    var name = "Default Title"
+    var logs = [
         Log(date: "Jan 1", time: "10 m", notes: "Things to say")
     ]
 }
 
-//MARK: - Data Structs and enums
-
-// This is really just for
-struct Timer {
-    var startDate: Date
-    var endDate: Date
-    
-//    func formattedElappsedTime() -> String {
-//        
-//    }
-}
-
 struct Log: Identifiable {
-    var id = UUID()
+    let id = UUID()
     var date: String
     var time: String
     var notes: String
 }
+
+//MARK: - Data Structs and enums
 
 
 enum accountStatusEnum: String {
@@ -109,9 +109,13 @@ func getAccountStatusFromUserDefaults() -> accountStatusEnum {
 let defaults = UserDefaults.standard
 
 
-var things = [
+let things: [Log] = [
     Log(date: "Jan 1", time: "10 m", notes: "Things to say")
 ]
 
-
-
+//MARK: - Extentions
+extension Date {
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+}

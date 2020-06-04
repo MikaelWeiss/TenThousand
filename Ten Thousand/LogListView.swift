@@ -8,41 +8,59 @@
 
 import SwiftUI
 
+//MARK: - Full View
+
+
 struct LogListView: View {
     @EnvironmentObject var userSettings: UserSettings
-    @EnvironmentObject var userLogs: UserLogs
+    @ObservedObject var listOfUserLogs = ListOfUserLogs()
     
     var body: some View {
         VStack {
             ZStack (alignment: .bottomLeading) {
+                
                 TopBar()
                     .frame(height: 88)
                     .environmentObject(userSettings)
-                Text("My Title")
-                    .font(.system(.largeTitle, design: .rounded)).bold()
-                    .lineLimit(1)
-                    .padding(.leading)
+                
+                Button(action: {
+                    
+                }) {
+                    Text(listOfUserLogs.allLogLists[listOfUserLogs.currentLog].name)
+                        .font(.system(.largeTitle, design: .rounded)).bold()
+                        .lineLimit(1)
+                        .padding(.leading)
+                        
+                }
+                .buttonStyle(PlainButtonStyle())
             }
             List {
-                VStack (alignment: .leading) {
-                    HStack {
-                        Text("Jan 1 , 01:55")
+                ForEach(listOfUserLogs.allLogLists[listOfUserLogs.currentLog].logs) { log in
+                    VStack(alignment: .leading) {
+                        Text(log.date + ", " + log.time)
+                            .font(.system(size: 18, weight: .medium, design: .rounded))
+                        Text(log.notes)
+                            .font(.system(size: 15, weight: .regular, design: .rounded))
                     }
-                    Text("Some Notes")
-                        .multilineTextAlignment(.leading)
                 }
             }
         }
     }
 }
 
+
+//MARK: - Preview
+
+
 struct LogListView_Previews: PreviewProvider {
     static var previews: some View {
         LogListView()
             .environmentObject(UserSettings())
-            .environmentObject(UserLogs())
     }
 }
+
+
+//MARK: - Top Bar
 
 
 struct TopBar: View {
@@ -97,5 +115,3 @@ struct TopBar: View {
         }
     }
 }
-
-

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MainTabbedView: View {
     @EnvironmentObject var userSettings: UserSettings
-    @EnvironmentObject var userLogs: UserLogs
     
     var body: some View {
         TabView() {
