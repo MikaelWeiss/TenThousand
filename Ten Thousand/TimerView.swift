@@ -40,6 +40,7 @@ struct TimerView: View {
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 44, height: 44)
                                 .clipShape(Circle())
+                                .modifier(NavButtons())
                         }
                     }
                     .sheet(isPresented: $showAccountView) {

@@ -10,31 +10,31 @@ import SwiftUI
 
 struct MainTabbedView: View {
     @EnvironmentObject var userSettings: UserSettings
+    @EnvironmentObject var userLogs: UserLogs
     
     var body: some View {
         TabView() {
-        TimerView()
-            .tabItem {
-                VStack {
-                    Image(systemName: "clock")
-                        .font(.system(size: 16, weight: .semibold))
-                        .imageScale(.large)
-                    Text("Timer")
-                }
+            TimerView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "clock")
+                            .font(.system(size: 16, weight: .semibold))
+                            .imageScale(.large)
+                        Text("Timer")
+                    }
+                    
+            }.tag(1)
                 
-        }.tag(1)
-            
-        LogListView()
-            .tabItem {
-                VStack {
-                    Image(systemName: "list.bullet")
-                        .font(.system(size: 16, weight: .semibold))
-                        .imageScale(.large)
-                    Text("Logs")
-                }
-                
-        }.tag(2)
-            
+            LogListView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "list.bullet")
+                            .font(.system(size: 16, weight: .semibold))
+                            .imageScale(.large)
+                        Text("Logs")
+                    }
+                    
+            }.tag(2)
         }
     }
 }

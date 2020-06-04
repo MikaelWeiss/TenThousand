@@ -9,10 +9,15 @@
 import SwiftUI
 
 struct LogListView: View {
+    @EnvironmentObject var userSettings: UserSettings
+    @EnvironmentObject var userLogs: UserLogs
+    
     var body: some View {
         VStack {
             ZStack (alignment: .bottomLeading) {
-                TopBar().frame(height: 88)
+                TopBar()
+                    .frame(height: 88)
+                    .environmentObject(userSettings)
                 Text("My Title")
                     .font(.system(.largeTitle, design: .rounded)).bold()
                     .lineLimit(1)
@@ -34,6 +39,8 @@ struct LogListView: View {
 struct LogListView_Previews: PreviewProvider {
     static var previews: some View {
         LogListView()
+            .environmentObject(UserSettings())
+            .environmentObject(UserLogs())
     }
 }
 
@@ -66,6 +73,7 @@ struct TopBar: View {
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 44, height: 44)
                                 .clipShape(Circle())
+                                .modifier(NavButtons())
                         }
                     }
                     .sheet(isPresented: $showAccountView) {
