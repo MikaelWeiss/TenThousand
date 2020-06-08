@@ -14,7 +14,6 @@
 		A535DBCC248ED2D1004E53EC /* UserSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535DBCB248ED2D1004E53EC /* UserSettingsStore.swift */; };
 		A535DBCE248ED35B004E53EC /* DateCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535DBCD248ED35B004E53EC /* DateCalc.swift */; };
 		A535DBD2248ED69C004E53EC /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535DBD1248ED69C004E53EC /* MainTabbedView.swift */; };
-		A535DBD4248ED90E004E53EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A535DBD3248ED90E004E53EC /* Info.plist */; };
 		A56A139C24829E7600EFF95E /* ObjectsAndModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */; };
 		A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E9C872463565600BE88FD /* DurationPickerView.swift */; };
 		A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3A2459BAF20074A99A /* AppDelegate.swift */; };
@@ -35,7 +34,7 @@
 		A535DBCB248ED2D1004E53EC /* UserSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsStore.swift; sourceTree = "<group>"; };
 		A535DBCD248ED35B004E53EC /* DateCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalc.swift; sourceTree = "<group>"; };
 		A535DBD1248ED69C004E53EC /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
-		A535DBD3248ED90E004E53EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A535DBDA248EE09E004E53EC /* MyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MyInfo.plist; sourceTree = "<group>"; };
 		A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsAndModels.swift; sourceTree = "<group>"; };
 		A56E9C872463565600BE88FD /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		A5700B372459BAF20074A99A /* Ten Thousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ten Thousand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +62,7 @@
 		A535DBBF248EC72B004E53EC /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				A535DBD1248ED69C004E53EC /* MainTabbedView.swift */,
+				A5E28F8A248EE27D004DBA05 /* MainTabbedView */,
 				A535DBD0248ED575004E53EC /* LogListView */,
 				A535DBCF248ED4BE004E53EC /* TimerView */,
 				A56E9C8B2463581100BE88FD /* UIViewRepresentables */,
@@ -98,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A5700B3A2459BAF20074A99A /* AppDelegate.swift */,
+				A535DBDA248EE09E004E53EC /* MyInfo.plist */,
 				A5700B3C2459BAF20074A99A /* SceneDelegate.swift */,
 				A5700B402459BAF30074A99A /* Assets.xcassets */,
 				A5700B452459BAF30074A99A /* LaunchScreen.storyboard */,
@@ -135,6 +135,7 @@
 				A5700B382459BAF20074A99A /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A5700B382459BAF20074A99A /* Products */ = {
 			isa = PBXGroup;
@@ -151,7 +152,6 @@
 				A535DBC0248EC73F004E53EC /* Application Layer */,
 				A535DBC1248EC772004E53EC /* Domain Layer */,
 				A5700B422459BAF30074A99A /* Preview Content */,
-				A535DBD3248ED90E004E53EC /* Info.plist */,
 			);
 			path = "Ten Thousand";
 			sourceTree = "<group>";
@@ -171,6 +171,14 @@
 				A58296C2246618FD008443E0 /* NavButtons.swift */,
 			);
 			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		A5E28F8A248EE27D004DBA05 /* MainTabbedView */ = {
+			isa = PBXGroup;
+			children = (
+				A535DBD1248ED69C004E53EC /* MainTabbedView.swift */,
+			);
+			path = MainTabbedView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A535DBD4248ED90E004E53EC /* Info.plist in Resources */,
 				A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */,
 				A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */,
 				A5700B412459BAF30074A99A /* Assets.xcassets in Resources */,
@@ -398,7 +405,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Ten Thousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ten Thousand/Info.plist";
+				INFOPLIST_FILE = "Ten Thousand/Application Layer/Main/MyInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,7 +425,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Ten Thousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ten Thousand/Info.plist";
+				INFOPLIST_FILE = "Ten Thousand/Application Layer/Main/MyInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

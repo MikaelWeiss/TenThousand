@@ -25,6 +25,7 @@ struct MainTabbedView: View
                         .imageScale(.large)
                     
                     Text("Timer")
+                        .fontWeight(.semibold)
                 }
                 
             }.tag(1)
@@ -38,6 +39,7 @@ struct MainTabbedView: View
                         .imageScale(.large)
                     
                     Text("Logs")
+                        .fontWeight(.semibold)
                 }
                 
             }.tag(2)
