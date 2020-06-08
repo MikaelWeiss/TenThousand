@@ -24,6 +24,7 @@
 		A58296BC24661806008443E0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296BB24661806008443E0 /* MainButton.swift */; };
 		A58296C3246618FD008443E0 /* NavButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296C2246618FD008443E0 /* NavButtons.swift */; };
 		A5A8D754246A3B3A000F3AB6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */; };
+		A5E28F8C248EE3D2004DBA05 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E28F8B248EE3D2004DBA05 /* LogListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A58296BB24661806008443E0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		A58296C2246618FD008443E0 /* NavButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtons.swift; sourceTree = "<group>"; };
 		A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A5E28F8B248EE3D2004DBA05 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		A535DBD0248ED575004E53EC /* LogListView */ = {
 			isa = PBXGroup;
 			children = (
+				A5E28F8B248EE3D2004DBA05 /* LogListView.swift */,
 			);
 			path = LogListView;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
 				A58296C3246618FD008443E0 /* NavButtons.swift in Sources */,
+				A5E28F8C248EE3D2004DBA05 /* LogListView.swift in Sources */,
 				A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */,
 				A535DBCE248ED35B004E53EC /* DateCalc.swift in Sources */,
 				A58296BC24661806008443E0 /* MainButton.swift in Sources */,
