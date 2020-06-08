@@ -12,13 +12,57 @@ import SwiftUI
 
 //MARK: - Environment Objects:
 
-class Timer: ObservableObject {
-    @Published var startDate = Date().addingTimeInterval(-600)
-    @Published var endDate = Date()
-    @Published var timerRunning = false
+class UserTimer: ObservableObject {
+    @Published var elapsedTime: TimeInterval = 0
+    let startDate: Date
+//Defualt set to false, so that if at init the code fails to load from defaults and it returns false, then it still works fine.
+    var timerIsPlaying = false
     
-    var elappsedTime: TimeInterval {
-        return endDate - startDate
+//    let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+//    
+//    @objc func fireTimer() {
+//        print("Timer fired!")
+//    }
+    
+    func pause() {
+        
+    }
+    func play() {
+        
+    }
+    func appWillClose() {
+        defaults.set(elapsedTime, forKey: "elapsedTime")
+        defaults.set(startDate, forKey: "startDate")
+        defaults.set(timerIsPlaying, forKey: "timerIsPlaying")
+        defaults.set(Date(), forKey: "appClosedDate")
+    }
+    
+    init() {
+        self.timerIsPlaying = defaults.bool(forKey: "timerIsPlaying")
+        
+        if let start = defaults.value(forKey: "startDate") as? Date {
+            self.startDate = start
+        } else {
+            self.startDate = Date()
+        }
+        
+        if let time = defaults.value(forKey: "elapsedTime") as? TimeInterval {
+            if timerIsPlaying {
+                if let date = defaults.value(forKey: "appClosedDate") as? Date {
+                    self.elapsedTime = time + (Date() - date)
+                }
+            } else {
+                self.elapsedTime = time
+            }
+        } else {
+            self.elapsedTime = 0
+        }
+        
+        defaults.removeObject(forKey: "elapsedTime")
+        defaults.removeObject(forKey: "startDate")
+        defaults.removeObject(forKey: "timerIsPlaying")
+        defaults.removeObject(forKey: "appClosedDate")
+        
     }
 }
 
