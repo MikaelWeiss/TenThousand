@@ -14,6 +14,7 @@ import SwiftUI
 struct LogListView: View {
     @EnvironmentObject var userSettings: UserSettings
     @ObservedObject var listOfUserLogs = ListOfUserLogs()
+    @State private var showChoseLogList = false
     
     var body: some View {
         VStack {
@@ -24,7 +25,7 @@ struct LogListView: View {
                     .environmentObject(userSettings)
                 
                 Button(action: {
-                    
+                    self.showChoseLogList.toggle()
                 }) {
                     Text(listOfUserLogs.allLogLists[listOfUserLogs.currentLog].name)
                         .font(.system(.largeTitle, design: .rounded)).bold()
