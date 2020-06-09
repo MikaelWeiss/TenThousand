@@ -14,55 +14,59 @@ import SwiftUI
 
 class UserTimer: ObservableObject {
     @Published var elapsedTime: TimeInterval = 0
-    let startDate: Date
-//Defualt set to false, so that if at init the code fails to load from defaults and it returns false, then it still works fine.
-    var timerIsPlaying = false
+    var pauseStartDate: Date?
+    var pauseEndDate: Date?
+    private var canAdjust = true
     
-//    let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-//    
-//    @objc func fireTimer() {
-//        print("Timer fired!")
-//    }
     
     func pause() {
-        
+        pauseStartDate = Date()
+        pauseEndDate = nil
     }
     func play() {
-        
+        pauseStartDate = nil
+        pauseEndDate = Date()
+        canAdjust = true
     }
-    func appWillClose() {
+    
+    func adjustElapsedTime() {
+        if pauseEndDate != nil {
+            if canAdjust {
+                elapsedTime += Date() - pauseEndDate!
+                canAdjust = false
+            }
+        }
+    }
+    
+    func saveEverything() {
+        adjustElapsedTime()
         defaults.set(elapsedTime, forKey: "elapsedTime")
-        defaults.set(startDate, forKey: "startDate")
-        defaults.set(timerIsPlaying, forKey: "timerIsPlaying")
-        defaults.set(Date(), forKey: "appClosedDate")
+        
+        if pauseStartDate != nil {
+            defaults.set(false, forKey: "timerGoing")
+        } else {
+            defaults.set(true, forKey: "timerGoing")
+            defaults.set(pauseEndDate, forKey: "pauseEndDate")
+        }
+    }
+    
+    func invalidateTimer() {
+        elapsedTime = 0
+        pauseStartDate = nil
+        pauseEndDate = nil
+        canAdjust = true
     }
     
     init() {
-        self.timerIsPlaying = defaults.bool(forKey: "timerIsPlaying")
-        
-        if let start = defaults.value(forKey: "startDate") as? Date {
-            self.startDate = start
-        } else {
-            self.startDate = Date()
+        elapsedTime = defaults.value(forKey: "elapsedTime") as? TimeInterval ?? 0
+        if defaults.bool(forKey: "timerGoing") == true {
+            pauseEndDate = defaults.value(forKey: "pauseEndDate") as? Date
+            canAdjust = true
+            adjustElapsedTime()
         }
-        
-        if let time = defaults.value(forKey: "elapsedTime") as? TimeInterval {
-            if timerIsPlaying {
-                if let date = defaults.value(forKey: "appClosedDate") as? Date {
-                    self.elapsedTime = time + (Date() - date)
-                }
-            } else {
-                self.elapsedTime = time
-            }
-        } else {
-            self.elapsedTime = 0
-        }
-        
         defaults.removeObject(forKey: "elapsedTime")
-        defaults.removeObject(forKey: "startDate")
-        defaults.removeObject(forKey: "timerIsPlaying")
-        defaults.removeObject(forKey: "appClosedDate")
-        
+        defaults.removeObject(forKey: "timerGoing")
+        defaults.removeObject(forKey: "pauseEndDate")
     }
 }
 
