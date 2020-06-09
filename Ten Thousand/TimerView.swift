@@ -10,10 +10,12 @@ import SwiftUI
 
 struct TimerView: View {
     @EnvironmentObject var userSettings: UserSettings
-//    @ObservedObject var timer = Timer()
     @State private var showHelpCenter = false
     @State private var showAccountView = false
-    @State private var timerRunning: Bool = false
+    @State private var timerRunning = false
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    var sourceTimer: DispatchSourceTimer?
+    @State private var counter = 0.0
 //TODO: Timer stops working when you switch between screens. FIX!
     
     var body: some View {
@@ -63,16 +65,25 @@ struct TimerView: View {
             }
             
             VStack (spacing: 20) {
-                Text("")
+                Text(String(format: "%.1f", counter))
                     .font(.system(size: 40, weight: .heavy, design: .rounded))
                     .frame(maxWidth: .infinity)
+                    .onReceive(timer) { time in
+                        if self.timerRunning {
+                            self.counter += 0.1
+                        }
+                    }
                 HStack (spacing: 20){
-                    Button(action: {self.timerRunning.toggle()}) {
+                    Button(action: {
+                        self.timerRunning.toggle()
+                    }) {
                         Image(systemName: timerRunning ? "pause.fill" : "play.fill")
                     }
                     .modifier(MainButton())
                     Button(action: {
-                         //Save time/reset time
+                        self.timerRunning = false
+                        self.counter = 0.0
+                        //save a new log
                          } )  {
                         Image(systemName: "gobackward")
                             .font(.system(size: 16, weight: .heavy))
@@ -80,6 +91,25 @@ struct TimerView: View {
                 }
             }
         }
+    }
+    
+    func saveTimer() {
+        defaults.setValue(counter, forKey: "ellapsedTime")
+        if timerRunning {
+            defaults.setValue(Date(), forKey: "appterminated")
+            defaults.set(true, forKey: "timerIsRunning")
+        }
+    }
+    func getTimer() {
+        counter = defaults.value(forKey: "ellapsedTime") as? Double ?? 0.0
+        if defaults.bool(forKey: "timerIsRunning") == true {
+            if let terminatoinDate = defaults.value(forKey: "appterminated") as? Date {
+                counter += Date() - terminatoinDate
+            }
+        }
+        defaults.removeObject(forKey: "ellapsedTime")
+        defaults.removeObject(forKey: "timerIsRunning")
+        defaults.removeObject(forKey: "appterminated")
     }
 }
 

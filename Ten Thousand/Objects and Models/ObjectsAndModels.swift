@@ -12,64 +12,6 @@ import SwiftUI
 
 //MARK: - Environment Objects:
 
-class UserTimer: ObservableObject {
-    @Published var elapsedTime: TimeInterval = 0
-    var pauseStartDate: Date?
-    var pauseEndDate: Date?
-    private var canAdjust = true
-    
-    
-    func pause() {
-        pauseStartDate = Date()
-        pauseEndDate = nil
-    }
-    func play() {
-        pauseStartDate = nil
-        pauseEndDate = Date()
-        canAdjust = true
-    }
-    
-    func adjustElapsedTime() {
-        if pauseEndDate != nil {
-            if canAdjust {
-                elapsedTime += Date() - pauseEndDate!
-                canAdjust = false
-            }
-        }
-    }
-    
-    func saveEverything() {
-        adjustElapsedTime()
-        defaults.set(elapsedTime, forKey: "elapsedTime")
-        
-        if pauseStartDate != nil {
-            defaults.set(false, forKey: "timerGoing")
-        } else {
-            defaults.set(true, forKey: "timerGoing")
-            defaults.set(pauseEndDate, forKey: "pauseEndDate")
-        }
-    }
-    
-    func invalidateTimer() {
-        elapsedTime = 0
-        pauseStartDate = nil
-        pauseEndDate = nil
-        canAdjust = true
-    }
-    
-    init() {
-        elapsedTime = defaults.value(forKey: "elapsedTime") as? TimeInterval ?? 0
-        if defaults.bool(forKey: "timerGoing") == true {
-            pauseEndDate = defaults.value(forKey: "pauseEndDate") as? Date
-            canAdjust = true
-            adjustElapsedTime()
-        }
-        defaults.removeObject(forKey: "elapsedTime")
-        defaults.removeObject(forKey: "timerGoing")
-        defaults.removeObject(forKey: "pauseEndDate")
-    }
-}
-
 class UserSettings: ObservableObject {
     @Published var profilePicture = getImage()
     @Published var name = getFromUserDefaults(key: "name") ?? ""

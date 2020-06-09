@@ -26,6 +26,7 @@
 		A5C557CA2465CE780002D442 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C557C92465CE780002D442 /* Insights.swift */; };
 		A5DCC595246197530076CE9B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCC594246197530076CE9B /* AccountView.swift */; };
 		A5DF46C3245CFA0E00D42229 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5DF46C2245CFA0E00D42229 /* impact.ttf */; };
+		A5E28F8E248F2E9C004DBA05 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E28F8D248F2E9C004DBA05 /* StopWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A5C557C92465CE780002D442 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		A5DCC594246197530076CE9B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A5DF46C2245CFA0E00D42229 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
+		A5E28F8D248F2E9C004DBA05 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
 				A546EC982460CD290048E44B /* TimerView.swift */,
+				A5E28F8D248F2E9C004DBA05 /* StopWatch.swift */,
 				A546EC9A2460CD390048E44B /* LogListView.swift */,
 				A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */,
 				A5DCC594246197530076CE9B /* AccountView.swift */,
@@ -233,6 +236,7 @@
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
 				A58296C3246618FD008443E0 /* NavButtons.swift in Sources */,
 				A546EC992460CD290048E44B /* TimerView.swift in Sources */,
+				A5E28F8E248F2E9C004DBA05 /* StopWatch.swift in Sources */,
 				A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */,
 				A5C557CA2465CE780002D442 /* Insights.swift in Sources */,
 				A5DCC595246197530076CE9B /* AccountView.swift in Sources */,
