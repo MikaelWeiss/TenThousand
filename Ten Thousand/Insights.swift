@@ -44,4 +44,7 @@ struct Insights_Previews: PreviewProvider {
             .background(Color.black)
         }
     }
+    init() {
+        UIScrollView.appearance().clipsToBounds = false
+    }
 }
