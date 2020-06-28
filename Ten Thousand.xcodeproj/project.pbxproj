@@ -88,6 +88,7 @@
 		A56E9C8B2463581100BE88FD /* UIViewRepresentables */ = {
 			isa = PBXGroup;
 			children = (
+				A5A076EC2470B8D100F5B777 /* BlurView.swift */,
 				A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */,
 				A56E9C872463565600BE88FD /* DurationPickerView.swift */,
 			);
@@ -144,7 +145,6 @@
 			children = (
 				A58296BB24661806008443E0 /* MainButton.swift */,
 				A58296C2246618FD008443E0 /* NavButtons.swift */,
-				A5A076EC2470B8D100F5B777 /* BlurView.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
