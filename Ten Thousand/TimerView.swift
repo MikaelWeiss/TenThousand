@@ -12,10 +12,8 @@ struct TimerView: View {
     @EnvironmentObject var userSettings: UserSettings
     @State private var showHelpCenter = false
     @State private var showAccountView = false
-    @State private var timerRunning = false
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    var sourceTimer: DispatchSourceTimer?
-    @State private var counter = 0.0
+    @ObservedObject var stopwatch: StopWatch
+    
 //TODO: Timer stops working when you switch between screens. FIX!
     
     var body: some View {
@@ -65,56 +63,40 @@ struct TimerView: View {
             }
             
             VStack (spacing: 20) {
-                Text(String(format: "%.1f", counter))
+                Text(stopwatch.observedTimeAsString)
                     .font(.system(size: 40, weight: .heavy, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .onReceive(timer) { time in
-                        if self.timerRunning {
-                            self.counter += 0.1
-                        }
-                    }
                 HStack (spacing: 20){
                     Button(action: {
-                        self.timerRunning.toggle()
+                        if stopwatch.observedIsPaused == true {
+                            stopwatch.play()
+                        } else {
+                            stopwatch.pause()
+                        }
                     }) {
-                        Image(systemName: timerRunning ? "pause.fill" : "play.fill")
+                        Image(systemName: stopwatch.observedIsPaused ? "play.fill" : "pause.fill")
+                            .font(.system(size: 16, weight: .heavy))
+                            .frame(minWidth: 44, minHeight: 44)
                     }
                     .modifier(MainButton())
                     Button(action: {
-                        self.timerRunning = false
-                        self.counter = 0.0
+                        _ = stopwatch.getImportantInfoToSave()
+                        stopwatch.reset()
                         //save a new log
                          } )  {
                         Image(systemName: "gobackward")
                             .font(.system(size: 16, weight: .heavy))
+                            .frame(minWidth: 44, minHeight: 44)
                     }.modifier(MainButton())
                 }
             }
         }
     }
-    
-    func saveTimer() {
-        defaults.setValue(counter, forKey: "ellapsedTime")
-        if timerRunning {
-            defaults.setValue(Date(), forKey: "appterminated")
-            defaults.set(true, forKey: "timerIsRunning")
-        }
-    }
-    func getTimer() {
-        counter = defaults.value(forKey: "ellapsedTime") as? Double ?? 0.0
-        if defaults.bool(forKey: "timerIsRunning") == true {
-            if let terminatoinDate = defaults.value(forKey: "appterminated") as? Date {
-                counter += Date() - terminatoinDate
-            }
-        }
-        defaults.removeObject(forKey: "ellapsedTime")
-        defaults.removeObject(forKey: "timerIsRunning")
-        defaults.removeObject(forKey: "appterminated")
-    }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView().environmentObject(UserSettings())
+        TimerView(stopwatch: StopWatch())
+            .environmentObject(UserSettings())
     }
 }

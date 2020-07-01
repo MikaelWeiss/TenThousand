@@ -103,9 +103,3 @@ let things: [Log] = [
     Log(date: "Jan 1", time: "10 m", notes: "Things to say")
 ]
 
-//MARK: - Extentions
-extension Date {
-    static func - (lhs: Date, rhs: Date) -> TimeInterval {
-        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
-    }
-}

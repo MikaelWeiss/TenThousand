@@ -1,114 +1,82 @@
 //
-//  StopWatch.swift
+//  Timer.swift
 //  Ten Thousand
 //
-//  Created by Mikael Weiss on 6/8/20.
+//  Created by Mikael Weiss on 7/1/20.
 //  Copyright © 2020 Mikael Weiss. All rights reserved.
 //
 
-import Combine
 import Foundation
-import SwiftUI
 
 class StopWatch: ObservableObject {
-    private var sourceTimer: DispatchSourceTimer?
-    private let queue = DispatchQueue(label: "stopwatch.timer")
-    private var counter: Int = 0
-    
-    var stopWatchTime = "00:00:00" {
-        didSet {
-            self.update()
+    @Published var observedTimeAsString = "00:00:00"
+    @Published var observedIsPaused = true
+    private var timer: Timer!
+    private var start: Date?
+    private var subtractingInterval: TimeInterval = 0
+    private var isPaused = true {
+        willSet {
+            self.observedIsPaused = newValue
         }
     }
-    
-    var paused = true {
-        didSet {
-            self.update()
+    private var pauseDate: Date?
+    private var trueTime: TimeInterval {
+        if self.isPaused {
+            if pauseDate != nil {
+                return pauseDate! - (start ?? Date()) - subtractingInterval
+            } else {
+                return 0.0
+            }
+        } else {
+            return Date() - (start ?? Date()) - subtractingInterval
         }
     }
-    
-    func start() {
-        self.paused = !self.paused
+    private var trueTimeString: String {
+        let counter = Int(trueTime)
+        let hours = counter / 3600
+        let minutes = (counter % 3600) / 60
+        let seconds =  (counter % 3600) % 60
         
-        guard let _ = self.sourceTimer else {
-            self.startTimer()
-            return
-        }
+        let hoursString = "\(hours < 10 ? "0" : "")\(hours)"
+        let minutesString = "\(minutes < 10 ? "0" : "")\(minutes)"
+        let secondsString = "\(seconds < 10 ? "0" : "")\(seconds)"
         
-        self.resumeTimer()
+        return hoursString + ":" + minutesString + ":" + secondsString
     }
-    
     func pause() {
-        self.paused = !self.paused
-        self.sourceTimer?.suspend()
+        isPaused = true
+        pauseDate = Date()
+        self.timer.invalidate()
     }
-    
+    func play() {
+        if start == nil {
+            start = Date()
+        }
+        isPaused = false
+        if pauseDate != nil {
+            subtractingInterval += Date() - pauseDate!
+        }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+//            self.objectWillChange.send()
+            self.observedTimeAsString = self.trueTimeString
+        }
+    }
     func reset() {
-        self.stopWatchTime = "00:00:00"
-        self.counter = 0
+        isPaused = true
+        start = nil
+        subtractingInterval = 0
+        observedTimeAsString = "00:00:00"
     }
     
-    func update() {
-        objectWillChange.send()
+    func getImportantInfoToSave() -> Info {
+        return Info(start: start, subtractingInterval: subtractingInterval, isPaused: isPaused, pauseDate: pauseDate)
     }
     
-    func isPaused() -> Bool {
-        return self.paused
-    }
-    
-    private func startTimer() {
-        self.sourceTimer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags.strict,
-                                                          queue: self.queue)
-        
-        self.resumeTimer()
-    }
-    
-    private func resumeTimer() {
-        self.sourceTimer?.setEventHandler {
-            self.updateTimer()
-        }
-        
-        self.sourceTimer?.schedule(deadline: .now(),
-                                   repeating: 0.01)
-        self.sourceTimer?.resume()
-    }
-    
-    private func updateTimer() {
-        self.counter += 1
-        
-        DispatchQueue.main.async {
-            self.stopWatchTime = StopWatch.convertCountToTimeString(counter: self.counter)
-        }
+    struct Info: Codable {
+        let start: Date?
+        let subtractingInterval: TimeInterval
+        let isPaused: Bool
+        let pauseDate: Date?
     }
 }
-
-extension StopWatch {
-    static func convertCountToTimeString(counter: Int) -> String {
-        let millseconds = counter % 100
-        let seconds = counter / 100
-        let minutes = seconds / 60
-        
-        var millsecondsString = "\(millseconds)"
-        var secondsString = "\(seconds)"
-        var minutesString = "\(minutes)"
-        
-        if millseconds < 10 {
-            millsecondsString = "0" + millsecondsString
-        }
-        
-        if seconds < 10 {
-            secondsString = "0" + secondsString
-        }
-        
-        if minutes < 10 {
-            minutesString = "0" + minutesString
-        }
-        
-        return "\(minutesString):\(secondsString):\(millsecondsString)"
-    }
-}
-
-
-//https://github.com/programmingwithswift/SwiftUIStopWatch/blob/master/StopWatch/StopWatch/StopWatch.swift
-//https://programmingwithswift.com/build-a-stopwatch-app-with-swiftui/
-//https://www.ioscreator.com/tutorials/stopwatch-tutorial

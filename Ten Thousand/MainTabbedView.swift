@@ -13,7 +13,7 @@ struct MainTabbedView: View {
     
     var body: some View {
         TabView() {
-            TimerView()
+            TimerView(stopwatch: StopWatch())
                 .tabItem {
                     VStack {
                         Image(systemName: "clock")
