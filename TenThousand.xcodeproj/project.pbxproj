@@ -100,7 +100,7 @@
 		A5700B2E2459BAF20074A99A = {
 			isa = PBXGroup;
 			children = (
-				A5700B392459BAF20074A99A /* Ten Thousand */,
+				A5700B392459BAF20074A99A /* TenThousand */,
 				A5700B382459BAF20074A99A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +113,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5700B392459BAF20074A99A /* Ten Thousand */ = {
+		A5700B392459BAF20074A99A /* TenThousand */ = {
 			isa = PBXGroup;
 			children = (
 				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
@@ -132,7 +132,7 @@
 				A5DF46C1245CF9EF00D42229 /* Fonts */,
 				A5700B422459BAF30074A99A /* Preview Content */,
 			);
-			path = "Ten Thousand";
+			path = TenThousand;
 			sourceTree = "<group>";
 		};
 		A5700B422459BAF30074A99A /* Preview Content */ = {
