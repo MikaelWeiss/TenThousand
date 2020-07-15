@@ -68,10 +68,10 @@ struct TimerView: View {
                     .frame(maxWidth: .infinity)
                 HStack (spacing: 20){
                     Button(action: {
-                        if stopwatch.observedIsPaused == true {
-                            stopwatch.play()
+                        if self.stopwatch.observedIsPaused == true {
+                            self.stopwatch.play()
                         } else {
-                            stopwatch.pause()
+                            self.stopwatch.pause()
                         }
                     }) {
                         Image(systemName: stopwatch.observedIsPaused ? "play.fill" : "pause.fill")
@@ -80,8 +80,8 @@ struct TimerView: View {
                     }
                     .modifier(MainButton())
                     Button(action: {
-                        _ = stopwatch.getImportantInfoToSave()
-                        stopwatch.reset()
+                        _ = self.stopwatch.getImportantInfoToSave()
+                        self.stopwatch.reset()
                         //save a new log
                          } )  {
                         Image(systemName: "gobackward")
