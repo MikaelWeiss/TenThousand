@@ -7,37 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC962460CCAD0048E44B /* MainTabbedView.swift */; };
-		A546EC992460CD290048E44B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC982460CD290048E44B /* TimerView.swift */; };
-		A546EC9B2460CD390048E44B /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9A2460CD390048E44B /* LogListView.swift */; };
-		A546EC9D2460CD5D0048E44B /* UpdateLogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */; };
-		A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546EC9E2460CD6B0048E44B /* HelpCenter.swift */; };
-		A56A139C24829E7600EFF95E /* ObjectsAndModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */; };
-		A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E9C872463565600BE88FD /* DurationPickerView.swift */; };
+		A5527E3724BF786300ECB160 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5527E3624BF786300ECB160 /* ContentView.swift */; };
 		A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3A2459BAF20074A99A /* AppDelegate.swift */; };
 		A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3C2459BAF20074A99A /* SceneDelegate.swift */; };
 		A5700B412459BAF30074A99A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B402459BAF30074A99A /* Assets.xcassets */; };
 		A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B432459BAF30074A99A /* Preview Assets.xcassets */; };
 		A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5700B452459BAF30074A99A /* LaunchScreen.storyboard */; };
-		A58296BC24661806008443E0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296BB24661806008443E0 /* MainButton.swift */; };
-		A58296C3246618FD008443E0 /* NavButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58296C2246618FD008443E0 /* NavButtons.swift */; };
-		A5A076ED2470B8D100F5B777 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A076EC2470B8D100F5B777 /* BlurView.swift */; };
-		A5A8D754246A3B3A000F3AB6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */; };
-		A5C557CA2465CE780002D442 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C557C92465CE780002D442 /* Insights.swift */; };
-		A5C9920024AD252000CC7BC6 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C991FF24AD252000CC7BC6 /* StopWatch.swift */; };
-		A5C9920324AD28C100CC7BC6 /* Date+SubtractToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9920224AD28C100CC7BC6 /* Date+SubtractToTimeInterval.swift */; };
-		A5DCC595246197530076CE9B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCC594246197530076CE9B /* AccountView.swift */; };
-		A5DF46C3245CFA0E00D42229 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5DF46C2245CFA0E00D42229 /* impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A546EC962460CCAD0048E44B /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
-		A546EC982460CD290048E44B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		A546EC9A2460CD390048E44B /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
-		A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogListView.swift; sourceTree = "<group>"; };
-		A546EC9E2460CD6B0048E44B /* HelpCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenter.swift; sourceTree = "<group>"; };
-		A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsAndModels.swift; sourceTree = "<group>"; };
-		A56E9C872463565600BE88FD /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
+		A5527E3624BF786300ECB160 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5700B372459BAF20074A99A /* TenThousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenThousand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5700B3A2459BAF20074A99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5700B3C2459BAF20074A99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,15 +24,6 @@
 		A5700B432459BAF30074A99A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5700B462459BAF30074A99A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5700B482459BAF30074A99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A58296BB24661806008443E0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
-		A58296C2246618FD008443E0 /* NavButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtons.swift; sourceTree = "<group>"; };
-		A5A076EC2470B8D100F5B777 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		A5C557C92465CE780002D442 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
-		A5C991FF24AD252000CC7BC6 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
-		A5C9920224AD28C100CC7BC6 /* Date+SubtractToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SubtractToTimeInterval.swift"; sourceTree = "<group>"; };
-		A5DCC594246197530076CE9B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		A5DF46C2245CFA0E00D42229 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,24 +49,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A56A139A24829E4B00EFF95E /* Objects and Models */ = {
-			isa = PBXGroup;
-			children = (
-				A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */,
-			);
-			path = "Objects and Models";
-			sourceTree = "<group>";
-		};
-		A56E9C8B2463581100BE88FD /* UIViewRepresentables */ = {
-			isa = PBXGroup;
-			children = (
-				A5A076EC2470B8D100F5B777 /* BlurView.swift */,
-				A5A8D753246A3B3A000F3AB6 /* ImagePicker.swift */,
-				A56E9C872463565600BE88FD /* DurationPickerView.swift */,
-			);
-			path = UIViewRepresentables;
-			sourceTree = "<group>";
-		};
 		A5700B2E2459BAF20074A99A = {
 			isa = PBXGroup;
 			children = (
@@ -116,20 +68,8 @@
 		A5700B392459BAF20074A99A /* TenThousand */ = {
 			isa = PBXGroup;
 			children = (
-				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
-				A546EC982460CD290048E44B /* TimerView.swift */,
-				A546EC9A2460CD390048E44B /* LogListView.swift */,
-				A546EC9C2460CD5D0048E44B /* UpdateLogListView.swift */,
-				A5DCC594246197530076CE9B /* AccountView.swift */,
-				A546EC9E2460CD6B0048E44B /* HelpCenter.swift */,
-				A5C557C92465CE780002D442 /* Insights.swift */,
-				A5C991FF24AD252000CC7BC6 /* StopWatch.swift */,
-				A58296BD24661814008443E0 /* Modifiers */,
-				A5C9920124AD28A300CC7BC6 /* Extensions */,
-				A56E9C8B2463581100BE88FD /* UIViewRepresentables */,
-				A56A139A24829E4B00EFF95E /* Objects and Models */,
+				A5527E3624BF786300ECB160 /* ContentView.swift */,
 				A51AE2CE245E2D370081C891 /* Supporting Files */,
-				A5DF46C1245CF9EF00D42229 /* Fonts */,
 				A5700B422459BAF30074A99A /* Preview Content */,
 			);
 			path = TenThousand;
@@ -141,31 +81,6 @@
 				A5700B432459BAF30074A99A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A58296BD24661814008443E0 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				A58296BB24661806008443E0 /* MainButton.swift */,
-				A58296C2246618FD008443E0 /* NavButtons.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		A5C9920124AD28A300CC7BC6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A5C9920224AD28C100CC7BC6 /* Date+SubtractToTimeInterval.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A5DF46C1245CF9EF00D42229 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A5DF46C2245CFA0E00D42229 /* impact.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DF46C3245CFA0E00D42229 /* impact.ttf in Resources */,
 				A5700B472459BAF30074A99A /* LaunchScreen.storyboard in Resources */,
 				A5700B442459BAF30074A99A /* Preview Assets.xcassets in Resources */,
 				A5700B412459BAF30074A99A /* Assets.xcassets in Resources */,
@@ -240,23 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A8D754246A3B3A000F3AB6 /* ImagePicker.swift in Sources */,
-				A546EC9D2460CD5D0048E44B /* UpdateLogListView.swift in Sources */,
-				A5A076ED2470B8D100F5B777 /* BlurView.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
-				A58296C3246618FD008443E0 /* NavButtons.swift in Sources */,
-				A546EC992460CD290048E44B /* TimerView.swift in Sources */,
-				A56E9C882463565600BE88FD /* DurationPickerView.swift in Sources */,
-				A5C557CA2465CE780002D442 /* Insights.swift in Sources */,
-				A5C9920324AD28C100CC7BC6 /* Date+SubtractToTimeInterval.swift in Sources */,
-				A5DCC595246197530076CE9B /* AccountView.swift in Sources */,
-				A58296BC24661806008443E0 /* MainButton.swift in Sources */,
-				A546EC972460CCAD0048E44B /* MainTabbedView.swift in Sources */,
-				A546EC9F2460CD6B0048E44B /* HelpCenter.swift in Sources */,
-				A56A139C24829E7600EFF95E /* ObjectsAndModels.swift in Sources */,
-				A546EC9B2460CD390048E44B /* LogListView.swift in Sources */,
-				A5C9920024AD252000CC7BC6 /* StopWatch.swift in Sources */,
+				A5527E3724BF786300ECB160 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

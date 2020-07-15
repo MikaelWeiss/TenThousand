@@ -1,21 +1,21 @@
 //
-//  HelpCenter.swift
-//  Ten Thousand
+//  ContentView.swift
+//  TenThousand
 //
-//  Created by Mikael Weiss on 5/4/20.
+//  Created by Mikael Weiss on 7/15/20.
 //  Copyright © 2020 Mikael Weiss. All rights reserved.
 //
 
 import SwiftUI
 
-struct HelpCenter: View {
+struct ContentView: View {
     var body: some View {
         Text("Hello, World!")
     }
 }
 
-struct HelpCenter_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpCenter()
+        ContentView()
     }
 }
