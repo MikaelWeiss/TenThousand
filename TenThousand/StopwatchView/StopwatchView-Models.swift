@@ -11,10 +11,10 @@ import SwiftUI
 extension StopwatchView {
     
     class ViewModel: ObservableObject {
-        @Published var currentTime: String?
+        @Published var currentTime: String? = "asdf"
         @Published var stopwatchState: StopwatchState
         var canSave: Bool {
-            return currentTime != nil
+            return (currentTime ?? "").isEmpty
         }
         
         enum StopwatchState {
@@ -26,26 +26,5 @@ extension StopwatchView {
             self.currentTime = currentTime
             self.stopwatchState = .paused
         }
-    }
-    
-    enum CheckCanSave {
-        struct Response {
-            let canSave: Bool
-        }
-    }
-    
-    enum Styles {
-        static let timerTextFont = Font.system(.largeTitle, design: .rounded)
-        static let saveButtonFont = Font.system(.title, design: .rounded)
-        static let pausePlayImageFont = Font.system(size: 30, weight: .bold)
-    }
-    
-    enum Images {
-        static let pauseImage = "pause.circle.fill"
-        static let playImage = "play.circle.fill"
-    }
-    
-    enum Strings {
-        static let saveButtonTitle = "Save"
     }
 }

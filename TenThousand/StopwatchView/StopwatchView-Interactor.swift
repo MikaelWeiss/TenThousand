@@ -9,7 +9,6 @@
 import Foundation
 
 protocol StopwatchViewRequesting {
-    func checkCanSave()
     func didTapPause()
     func didTapPlay()
     func saveLog()
@@ -20,11 +19,6 @@ struct StopwatchViewInteractor: StopwatchViewRequesting {
     
 //    let service: StopwatchViewService
 //    let presenter: StopwatchViewPresenting
-    
-    func checkCanSave() {
-        
-    }
-    
     func didTapPause() {
         
     }

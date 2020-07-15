@@ -24,33 +24,36 @@ struct StopwatchViewController: View, StopwatchViewDisplaying, StopwatchViewInpu
     
     var body: some View {
         ZStack {
-            Rectangle().edgesIgnoringSafeArea(.all)
             Text("\(ViewModel.currentTime ?? "00:00:00")")
                 .font(timerTextFont)
-            ZStack {
+            VStack {
                 Spacer()
                 HStack {
-                    Image(systemName:
-                       (ViewModel.stopwatchState == .paused ?
-                        playImage :
-                        pauseImage)
-                    )
-                        .font(pausePlayImageFont)
+                    Button(action: {
+                        self.didTapSave()
+                    }) {
+                        Image(systemName:
+                        (ViewModel.stopwatchState == .paused ?
+                         playImage :
+                         pauseImage))
+                            .renderingMode(.original)
+                    }
+                    .frame(height: buttonHeight)
+                    .frame(maxWidth: .infinity)
                     if ViewModel.canSave {
                         Button(action: {
                             self.didTapSave()
                         }) {
-                            Circle()
-                            .overlay(
-                                Text(saveButtonTitle)
-                                    .font(saveButtonFont)
-                            )
+                            Image(systemName: "square.and.pencil")
+                                .renderingMode(.original)
                         }
-                        .frame(width: saveButtonDemensions.width, height: saveButtonDemensions.height)
+                        .frame(height: buttonHeight)
+                        .frame(maxWidth: .infinity)
                     }
                 }
             }
         }
+        .font(pausePlayImageFont)
         .onTapGesture {
             if self.ViewModel.stopwatchState == .paused {
                 self.didTapPause()
@@ -74,13 +77,11 @@ struct StopwatchViewController: View, StopwatchViewDisplaying, StopwatchViewInpu
     }
     
     // MARK: - Styling/Setup
-    let timerTextFont = StopwatchView.Styles.timerTextFont
-    let playImage = StopwatchView.Images.playImage
-    let pauseImage = StopwatchView.Images.pauseImage
-    let pausePlayImageFont = StopwatchView.Styles.pausePlayImageFont
-    let saveButtonTitle = StopwatchView.Strings.saveButtonTitle
-    let saveButtonFont = StopwatchView.Styles.saveButtonFont
-    let saveButtonDemensions: (width: CGFloat, height: CGFloat) = (width: 44, height: 44)
+    let timerTextFont = Font.system(.largeTitle, design: .rounded).weight(.heavy)
+    let playImage = "play.circle.fill"
+    let pauseImage = "pause.circle.fill"
+    let pausePlayImageFont = Font.system(size: 30, weight: .bold)
+    let buttonHeight: CGFloat = 44
 }
 
 struct StopwatchViewController_Previews: PreviewProvider {
