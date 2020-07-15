@@ -291,6 +291,7 @@
 		A5700B4C2459BAF30074A99A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TenThousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
@@ -310,6 +311,7 @@
 		A5700B4D2459BAF30074A99A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TenThousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
