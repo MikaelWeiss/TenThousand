@@ -38,7 +38,7 @@
 		A546EC9E2460CD6B0048E44B /* HelpCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenter.swift; sourceTree = "<group>"; };
 		A56A139B24829E7600EFF95E /* ObjectsAndModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsAndModels.swift; sourceTree = "<group>"; };
 		A56E9C872463565600BE88FD /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
-		A5700B372459BAF20074A99A /* Ten Thousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ten Thousand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5700B372459BAF20074A99A /* TenThousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenThousand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5700B3A2459BAF20074A99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5700B3C2459BAF20074A99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A5700B402459BAF30074A99A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		A5700B2E2459BAF20074A99A = {
 			isa = PBXGroup;
 			children = (
-				A5700B392459BAF20074A99A /* TenThousand */,
+				A5700B392459BAF20074A99A /* Ten Thousand */,
 				A5700B382459BAF20074A99A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,12 +108,12 @@
 		A5700B382459BAF20074A99A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5700B372459BAF20074A99A /* Ten Thousand.app */,
+				A5700B372459BAF20074A99A /* TenThousand.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5700B392459BAF20074A99A /* TenThousand */ = {
+		A5700B392459BAF20074A99A /* Ten Thousand */ = {
 			isa = PBXGroup;
 			children = (
 				A546EC962460CCAD0048E44B /* MainTabbedView.swift */,
@@ -132,7 +132,7 @@
 				A5DF46C1245CF9EF00D42229 /* Fonts */,
 				A5700B422459BAF30074A99A /* Preview Content */,
 			);
-			path = TenThousand;
+			path = "Ten Thousand";
 			sourceTree = "<group>";
 		};
 		A5700B422459BAF30074A99A /* Preview Content */ = {
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5700B362459BAF20074A99A /* Ten Thousand */ = {
+		A5700B362459BAF20074A99A /* TenThousand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5700B4B2459BAF30074A99A /* Build configuration list for PBXNativeTarget "Ten Thousand" */;
+			buildConfigurationList = A5700B4B2459BAF30074A99A /* Build configuration list for PBXNativeTarget "TenThousand" */;
 			buildPhases = (
 				A5700B332459BAF20074A99A /* Sources */,
 				A5700B342459BAF20074A99A /* Frameworks */,
@@ -183,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = "Ten Thousand";
+			name = TenThousand;
 			productName = "Ten Thousand";
-			productReference = A5700B372459BAF20074A99A /* Ten Thousand.app */;
+			productReference = A5700B372459BAF20074A99A /* TenThousand.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5700B322459BAF20074A99A /* Build configuration list for PBXProject "Ten Thousand" */;
+			buildConfigurationList = A5700B322459BAF20074A99A /* Build configuration list for PBXProject "TenThousand" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,7 +216,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5700B362459BAF20074A99A /* Ten Thousand */,
+				A5700B362459BAF20074A99A /* TenThousand */,
 			);
 		};
 /* End PBXProject section */
@@ -429,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5700B322459BAF20074A99A /* Build configuration list for PBXProject "Ten Thousand" */ = {
+		A5700B322459BAF20074A99A /* Build configuration list for PBXProject "TenThousand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5700B492459BAF30074A99A /* Debug */,
@@ -438,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5700B4B2459BAF30074A99A /* Build configuration list for PBXNativeTarget "Ten Thousand" */ = {
+		A5700B4B2459BAF30074A99A /* Build configuration list for PBXNativeTarget "TenThousand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5700B4C2459BAF30074A99A /* Debug */,
