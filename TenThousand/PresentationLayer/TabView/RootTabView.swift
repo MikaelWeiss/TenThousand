@@ -10,10 +10,13 @@ import SwiftUI
 
 struct RootTabView: View {
     var body: some View {
-//        TabView {
-//            ViewStopwatch.Scene()
-//        }
-        Text("Sup")
+        TabView {
+            ViewStopwatch.Scene().viewController
+            .tabItem {
+                Image(systemName: "1.square.fill")
+                Text("Stopwatch")
+            }
+        }
     }
 }
 

@@ -16,19 +16,28 @@ protocol ViewStopwatchRequesting {
 
 
 struct ViewStopwatchInteractor: ViewStopwatchRequesting {
-//    let service: InputStopwatchService
-//    let presenter: InputStopwatchPresenting
+    let service: ViewStopwatchService
+    let presenter: ViewStopwatchPresenting
     
     func didTapPause() {
-        
+        service.pauseStopwatch()
+        presenter.presentPauseStopwatch()
     }
     
     func didTapPlay() {
-        
+        service.startStopwatch()
+        presenter.presentStartStopwatch()
     }
     
     func saveLog() {
-        
+        do {
+            try service.saveStopwatchLog()
+            presenter.presentSaveStopwatch()
+        } catch let error as ViewStopwatch.ServiceError {
+            presenter.presentShowError(response: ViewStopwatch.ShowError.Response(error: error))
+        } catch {
+            presenter.presentShowError(response: ViewStopwatch.ShowError.Response(error: .unknown))
+        }
     }
     
 }

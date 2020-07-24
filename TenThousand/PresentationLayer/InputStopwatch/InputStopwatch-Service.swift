@@ -7,3 +7,37 @@
 //
 
 import Foundation
+
+protocol ViewStopwatchService {
+    func fetchStopwatchTime() -> TimeInterval?
+    func startStopwatch()
+    func saveStopwatchLog() throws
+    func pauseStopwatch()
+}
+
+extension ViewStopwatch {
+    enum ServiceError: Swift.Error {
+        case saveFailed
+        case unknown
+    }
+    
+    struct Service: ViewStopwatchService {
+        var stopwatchTime: TimeInterval?
+        
+        func fetchStopwatchTime() -> TimeInterval? {
+            return stopwatchTime
+        }
+        
+        func startStopwatch() {
+            
+        }
+        
+        func pauseStopwatch() {
+            
+        }
+        
+        func saveStopwatchLog() throws {
+            
+        }
+    }
+}

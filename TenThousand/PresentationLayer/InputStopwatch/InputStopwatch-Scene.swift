@@ -11,12 +11,16 @@ import Foundation
 enum ViewStopwatch {
     
     struct Scene {
-//        lazy var viewController = buildViewController()
+        let viewModel = ViewStopwatch.ViewModel()
         
-//        private func buildViewController() -> ViewStopwatchViewController {
-//            let service =
-//            return InputStopwatchViewController(ViewModel: <#ViewStopwatch.ViewModel#>, interactor: <#ViewStopwatchRequesting?#>)
-//        }
+        let viewController: ViewStopwatchViewController
+        init() {
+            let service = ViewStopwatch.Service()
+            let presenter = ViewStopwatchPresenter(viewModel: viewModel)
+            let interactor = ViewStopwatchInteractor(service: service, presenter: presenter)
+            
+            self.viewController = ViewStopwatchViewController(ViewModel: viewModel, interactor: interactor)
+        }
     }
     
 }

@@ -20,7 +20,7 @@ protocol ViewStopwatchInputing {
 
 struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatchInputing {
     @ObservedObject var ViewModel: ViewStopwatch.ViewModel
-    let interactor: ViewStopwatchRequesting?
+    let interactor: ViewStopwatchRequesting
     
     var body: some View {
         ZStack {
@@ -65,27 +65,27 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
 
     // MARK: - Inputing
     func didTapPause() {
-        interactor?.didTapPause()
+        interactor.didTapPause()
     }
     
     func didTapPlay() {
-        interactor?.didTapPlay()
+        interactor.didTapPlay()
     }
     
     func didTapSave() {
-        interactor?.saveLog()
+        interactor.saveLog()
     }
     
-    // MARK: - Styling/Setup
-    let timerTextFont = Font.system(.largeTitle, design: .rounded).weight(.heavy)
-    let playImage = "play.circle.fill"
-    let pauseImage = "pause.circle.fill"
-    let pausePlayImageFont = Font.system(size: 30, weight: .bold)
-    let buttonHeight: CGFloat = 44
+    // MARK: - Drawing Constants
+    private let timerTextFont = Font.system(.largeTitle, design: .rounded).weight(.heavy)
+    private let playImage = "play.circle.fill"
+    private let pauseImage = "pause.circle.fill"
+    private let pausePlayImageFont = Font.system(size: 30, weight: .bold)
+    private let buttonHeight: CGFloat = 44
 }
 
-struct StopwatchViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewStopwatchViewController(ViewModel: ViewStopwatch.ViewModel(currentTime: nil), interactor: nil)
-    }
-}
+//struct StopwatchViewController_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ViewStopwatchViewController(ViewModel: ViewStopwatch.ViewModel(currentTime: nil), interactor: nil)
+//    }
+//}
