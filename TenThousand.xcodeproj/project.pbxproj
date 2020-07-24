@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5592F7624CA5EDA003419B1 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5592F7524CA5EDA003419B1 /* RootTabView.swift */; };
 		A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3A2459BAF20074A99A /* AppDelegate.swift */; };
 		A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5700B3C2459BAF20074A99A /* SceneDelegate.swift */; };
 		A5700B412459BAF30074A99A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5700B402459BAF30074A99A /* Assets.xcassets */; };
@@ -16,16 +17,17 @@
 		A590009224BFA64A0039787F /* Date+SubtractToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009124BFA64A0039787F /* Date+SubtractToTimeInterval.swift */; };
 		A590009524BFA7390039787F /* ActivityGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009424BFA7390039787F /* ActivityGroup.swift */; };
 		A590009724BFA8050039787F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009624BFA8050039787F /* User.swift */; };
-		A5F59D2D24BFAC0100E5E960 /* StopwatchView-Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2C24BFAC0100E5E960 /* StopwatchView-Interactor.swift */; };
-		A5F59D2F24BFAC8000E5E960 /* StopwatchView-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2E24BFAC8000E5E960 /* StopwatchView-Models.swift */; };
-		A5F59D3124BFAC8D00E5E960 /* StopwatchView-Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3024BFAC8D00E5E960 /* StopwatchView-Presenter.swift */; };
-		A5F59D3324BFAC9400E5E960 /* StopwatchView-Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3224BFAC9400E5E960 /* StopwatchView-Router.swift */; };
-		A5F59D3524BFAC9D00E5E960 /* StopwatchView-Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3424BFAC9D00E5E960 /* StopwatchView-Scene.swift */; };
-		A5F59D3724BFACAE00E5E960 /* StopwatchView-Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3624BFACAE00E5E960 /* StopwatchView-Service.swift */; };
-		A5F59D3B24BFACE900E5E960 /* StopwatchView-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3A24BFACE900E5E960 /* StopwatchView-ViewController.swift */; };
+		A5F59D2D24BFAC0100E5E960 /* InputStopwatch-Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */; };
+		A5F59D2F24BFAC8000E5E960 /* InputStopwatch-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */; };
+		A5F59D3124BFAC8D00E5E960 /* InputStopwatch-Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */; };
+		A5F59D3324BFAC9400E5E960 /* InputStopwatch-Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3224BFAC9400E5E960 /* InputStopwatch-Router.swift */; };
+		A5F59D3524BFAC9D00E5E960 /* InputStopwatch-Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */; };
+		A5F59D3724BFACAE00E5E960 /* InputStopwatch-Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */; };
+		A5F59D3B24BFACE900E5E960 /* InputStopwatch-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5592F7524CA5EDA003419B1 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		A5700B372459BAF20074A99A /* TenThousand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenThousand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5700B3A2459BAF20074A99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5700B3C2459BAF20074A99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,13 +39,13 @@
 		A590009124BFA64A0039787F /* Date+SubtractToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SubtractToTimeInterval.swift"; sourceTree = "<group>"; };
 		A590009424BFA7390039787F /* ActivityGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityGroup.swift; sourceTree = "<group>"; };
 		A590009624BFA8050039787F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A5F59D2C24BFAC0100E5E960 /* StopwatchView-Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Interactor.swift"; sourceTree = "<group>"; };
-		A5F59D2E24BFAC8000E5E960 /* StopwatchView-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Models.swift"; sourceTree = "<group>"; };
-		A5F59D3024BFAC8D00E5E960 /* StopwatchView-Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Presenter.swift"; sourceTree = "<group>"; };
-		A5F59D3224BFAC9400E5E960 /* StopwatchView-Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Router.swift"; sourceTree = "<group>"; };
-		A5F59D3424BFAC9D00E5E960 /* StopwatchView-Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Scene.swift"; sourceTree = "<group>"; };
-		A5F59D3624BFACAE00E5E960 /* StopwatchView-Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-Service.swift"; sourceTree = "<group>"; };
-		A5F59D3A24BFACE900E5E960 /* StopwatchView-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopwatchView-ViewController.swift"; sourceTree = "<group>"; };
+		A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Interactor.swift"; sourceTree = "<group>"; };
+		A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Models.swift"; sourceTree = "<group>"; };
+		A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Presenter.swift"; sourceTree = "<group>"; };
+		A5F59D3224BFAC9400E5E960 /* InputStopwatch-Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Router.swift"; sourceTree = "<group>"; };
+		A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Scene.swift"; sourceTree = "<group>"; };
+		A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Service.swift"; sourceTree = "<group>"; };
+		A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,50 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A5592F7024CA5E0D003419B1 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A5592F7424CA5EC6003419B1 /* TabView */,
+				A5F59D2B24BFAB0200E5E960 /* InputStopwatch */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		A5592F7124CA5E25003419B1 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A51AE2CE245E2D370081C891 /* Supporting Files */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		A5592F7224CA5E6B003419B1 /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A590009624BFA8050039787F /* User.swift */,
+				A590009424BFA7390039787F /* ActivityGroup.swift */,
+				A590008F24BF9E490039787F /* Log.swift */,
+				A5592F7724CA5F6A003419B1 /* Protocals */,
+				A590009324BFA6EE0039787F /* Extentions */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		A5592F7424CA5EC6003419B1 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				A5592F7524CA5EDA003419B1 /* RootTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		A5592F7724CA5F6A003419B1 /* Protocals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocals;
+			sourceTree = "<group>";
+		};
 		A5700B2E2459BAF20074A99A = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +134,9 @@
 		A5700B392459BAF20074A99A /* TenThousand */ = {
 			isa = PBXGroup;
 			children = (
-				A5F59D2B24BFAB0200E5E960 /* StopwatchView */,
-				A5F59D2A24BFAAE800E5E960 /* Stuff */,
-				A590009324BFA6EE0039787F /* Extentions */,
-				A51AE2CE245E2D370081C891 /* Supporting Files */,
+				A5592F7024CA5E0D003419B1 /* PresentationLayer */,
+				A5592F7124CA5E25003419B1 /* ApplicationLayer */,
+				A5592F7224CA5E6B003419B1 /* DomainLayer */,
 				A5700B422459BAF30074A99A /* Preview Content */,
 			);
 			path = TenThousand;
@@ -113,28 +158,18 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		A5F59D2A24BFAAE800E5E960 /* Stuff */ = {
+		A5F59D2B24BFAB0200E5E960 /* InputStopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				A590009624BFA8050039787F /* User.swift */,
-				A590009424BFA7390039787F /* ActivityGroup.swift */,
-				A590008F24BF9E490039787F /* Log.swift */,
+				A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */,
+				A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */,
+				A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */,
+				A5F59D3224BFAC9400E5E960 /* InputStopwatch-Router.swift */,
+				A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */,
+				A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */,
+				A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */,
 			);
-			path = Stuff;
-			sourceTree = "<group>";
-		};
-		A5F59D2B24BFAB0200E5E960 /* StopwatchView */ = {
-			isa = PBXGroup;
-			children = (
-				A5F59D2C24BFAC0100E5E960 /* StopwatchView-Interactor.swift */,
-				A5F59D2E24BFAC8000E5E960 /* StopwatchView-Models.swift */,
-				A5F59D3024BFAC8D00E5E960 /* StopwatchView-Presenter.swift */,
-				A5F59D3224BFAC9400E5E960 /* StopwatchView-Router.swift */,
-				A5F59D3424BFAC9D00E5E960 /* StopwatchView-Scene.swift */,
-				A5F59D3624BFACAE00E5E960 /* StopwatchView-Service.swift */,
-				A5F59D3A24BFACE900E5E960 /* StopwatchView-ViewController.swift */,
-			);
-			path = StopwatchView;
+			path = InputStopwatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,17 +243,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F59D2F24BFAC8000E5E960 /* StopwatchView-Models.swift in Sources */,
-				A5F59D3324BFAC9400E5E960 /* StopwatchView-Router.swift in Sources */,
-				A5F59D3B24BFACE900E5E960 /* StopwatchView-ViewController.swift in Sources */,
+				A5F59D2F24BFAC8000E5E960 /* InputStopwatch-Models.swift in Sources */,
+				A5F59D3324BFAC9400E5E960 /* InputStopwatch-Router.swift in Sources */,
+				A5F59D3B24BFACE900E5E960 /* InputStopwatch-ViewController.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
+				A5592F7624CA5EDA003419B1 /* RootTabView.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
-				A5F59D3524BFAC9D00E5E960 /* StopwatchView-Scene.swift in Sources */,
-				A5F59D2D24BFAC0100E5E960 /* StopwatchView-Interactor.swift in Sources */,
+				A5F59D3524BFAC9D00E5E960 /* InputStopwatch-Scene.swift in Sources */,
+				A5F59D2D24BFAC0100E5E960 /* InputStopwatch-Interactor.swift in Sources */,
 				A590009524BFA7390039787F /* ActivityGroup.swift in Sources */,
 				A590009224BFA64A0039787F /* Date+SubtractToTimeInterval.swift in Sources */,
-				A5F59D3724BFACAE00E5E960 /* StopwatchView-Service.swift in Sources */,
-				A5F59D3124BFAC8D00E5E960 /* StopwatchView-Presenter.swift in Sources */,
+				A5F59D3724BFACAE00E5E960 /* InputStopwatch-Service.swift in Sources */,
+				A5F59D3124BFAC8D00E5E960 /* InputStopwatch-Presenter.swift in Sources */,
 				A590009024BF9E490039787F /* Log.swift in Sources */,
 				A590009724BFA8050039787F /* User.swift in Sources */,
 			);
@@ -360,7 +396,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TenThousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TenThousand/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "TenThousand/ApplicationLayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +416,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TenThousand/Preview Content\"";
 				DEVELOPMENT_TEAM = X7WM6K9T24;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TenThousand/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "TenThousand/ApplicationLayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol StopwatchViewRequesting {
+protocol ViewStopwatchRequesting {
     func didTapPause()
     func didTapPlay()
     func saveLog()
 }
 
 
-struct StopwatchViewInteractor: StopwatchViewRequesting {
+struct ViewStopwatchInteractor: ViewStopwatchRequesting {
+//    let service: InputStopwatchService
+//    let presenter: InputStopwatchPresenting
     
-//    let service: StopwatchViewService
-//    let presenter: StopwatchViewPresenting
     func didTapPause() {
         
     }

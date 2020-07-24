@@ -8,19 +8,19 @@
 
 import SwiftUI
 
-protocol StopwatchViewDisplaying {
-    var ViewModel: StopwatchView.ViewModel { get set }
+protocol ViewStopwatchDisplaying {
+    var ViewModel: ViewStopwatch.ViewModel { get set }
 }
 
-protocol StopwatchViewInputing {
+protocol ViewStopwatchInputing {
     func didTapPause()
     func didTapPlay()
     func didTapSave()
 }
 
-struct StopwatchViewController: View, StopwatchViewDisplaying, StopwatchViewInputing {
-    @ObservedObject var ViewModel: StopwatchView.ViewModel
-    let interactor: StopwatchViewRequesting?
+struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatchInputing {
+    @ObservedObject var ViewModel: ViewStopwatch.ViewModel
+    let interactor: ViewStopwatchRequesting?
     
     var body: some View {
         ZStack {
@@ -86,6 +86,6 @@ struct StopwatchViewController: View, StopwatchViewDisplaying, StopwatchViewInpu
 
 struct StopwatchViewController_Previews: PreviewProvider {
     static var previews: some View {
-        StopwatchViewController(ViewModel: StopwatchView.ViewModel(currentTime: nil), interactor: nil)
+        ViewStopwatchViewController(ViewModel: ViewStopwatch.ViewModel(currentTime: nil), interactor: nil)
     }
 }

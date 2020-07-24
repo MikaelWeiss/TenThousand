@@ -1,5 +1,5 @@
 //
-//  Stopwatch-Scene.swift
+//  Stopwatch-Presenter.swift
 //  TenThousand
 //
 //  Created by Mikael Weiss on 7/15/20.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum StopwatchView {
-    
-    struct Scene {
-        
-    }
-    
-}
+//protocol InputStopwatchPresenting {
+//    
+//}
