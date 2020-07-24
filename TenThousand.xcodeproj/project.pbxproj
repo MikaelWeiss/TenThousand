@@ -17,12 +17,12 @@
 		A590009224BFA64A0039787F /* Date+SubtractToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009124BFA64A0039787F /* Date+SubtractToTimeInterval.swift */; };
 		A590009524BFA7390039787F /* ActivityGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009424BFA7390039787F /* ActivityGroup.swift */; };
 		A590009724BFA8050039787F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590009624BFA8050039787F /* User.swift */; };
-		A5F59D2D24BFAC0100E5E960 /* InputStopwatch-Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */; };
-		A5F59D2F24BFAC8000E5E960 /* InputStopwatch-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */; };
-		A5F59D3124BFAC8D00E5E960 /* InputStopwatch-Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */; };
-		A5F59D3524BFAC9D00E5E960 /* InputStopwatch-Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */; };
-		A5F59D3724BFACAE00E5E960 /* InputStopwatch-Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */; };
-		A5F59D3B24BFACE900E5E960 /* InputStopwatch-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */; };
+		A5F59D2D24BFAC0100E5E960 /* ViewStopwatch-Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2C24BFAC0100E5E960 /* ViewStopwatch-Interactor.swift */; };
+		A5F59D2F24BFAC8000E5E960 /* ViewStopwatch-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D2E24BFAC8000E5E960 /* ViewStopwatch-Models.swift */; };
+		A5F59D3124BFAC8D00E5E960 /* ViewStopwatch-Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3024BFAC8D00E5E960 /* ViewStopwatch-Presenter.swift */; };
+		A5F59D3524BFAC9D00E5E960 /* ViewStopwatch-Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3424BFAC9D00E5E960 /* ViewStopwatch-Scene.swift */; };
+		A5F59D3724BFACAE00E5E960 /* ViewStopwatch-Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3624BFACAE00E5E960 /* ViewStopwatch-Service.swift */; };
+		A5F59D3B24BFACE900E5E960 /* ViewStopwatch-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F59D3A24BFACE900E5E960 /* ViewStopwatch-ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,12 @@
 		A590009124BFA64A0039787F /* Date+SubtractToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SubtractToTimeInterval.swift"; sourceTree = "<group>"; };
 		A590009424BFA7390039787F /* ActivityGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityGroup.swift; sourceTree = "<group>"; };
 		A590009624BFA8050039787F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Interactor.swift"; sourceTree = "<group>"; };
-		A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Models.swift"; sourceTree = "<group>"; };
-		A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Presenter.swift"; sourceTree = "<group>"; };
-		A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Scene.swift"; sourceTree = "<group>"; };
-		A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-Service.swift"; sourceTree = "<group>"; };
-		A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStopwatch-ViewController.swift"; sourceTree = "<group>"; };
+		A5F59D2C24BFAC0100E5E960 /* ViewStopwatch-Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-Interactor.swift"; sourceTree = "<group>"; };
+		A5F59D2E24BFAC8000E5E960 /* ViewStopwatch-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-Models.swift"; sourceTree = "<group>"; };
+		A5F59D3024BFAC8D00E5E960 /* ViewStopwatch-Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-Presenter.swift"; sourceTree = "<group>"; };
+		A5F59D3424BFAC9D00E5E960 /* ViewStopwatch-Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-Scene.swift"; sourceTree = "<group>"; };
+		A5F59D3624BFACAE00E5E960 /* ViewStopwatch-Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-Service.swift"; sourceTree = "<group>"; };
+		A5F59D3A24BFACE900E5E960 /* ViewStopwatch-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewStopwatch-ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A5592F7424CA5EC6003419B1 /* TabView */,
-				A5F59D2B24BFAB0200E5E960 /* InputStopwatch */,
+				A5F59D2B24BFAB0200E5E960 /* ViewStopwatch */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -156,17 +156,17 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		A5F59D2B24BFAB0200E5E960 /* InputStopwatch */ = {
+		A5F59D2B24BFAB0200E5E960 /* ViewStopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				A5F59D2C24BFAC0100E5E960 /* InputStopwatch-Interactor.swift */,
-				A5F59D2E24BFAC8000E5E960 /* InputStopwatch-Models.swift */,
-				A5F59D3024BFAC8D00E5E960 /* InputStopwatch-Presenter.swift */,
-				A5F59D3424BFAC9D00E5E960 /* InputStopwatch-Scene.swift */,
-				A5F59D3624BFACAE00E5E960 /* InputStopwatch-Service.swift */,
-				A5F59D3A24BFACE900E5E960 /* InputStopwatch-ViewController.swift */,
+				A5F59D2C24BFAC0100E5E960 /* ViewStopwatch-Interactor.swift */,
+				A5F59D2E24BFAC8000E5E960 /* ViewStopwatch-Models.swift */,
+				A5F59D3024BFAC8D00E5E960 /* ViewStopwatch-Presenter.swift */,
+				A5F59D3424BFAC9D00E5E960 /* ViewStopwatch-Scene.swift */,
+				A5F59D3624BFACAE00E5E960 /* ViewStopwatch-Service.swift */,
+				A5F59D3A24BFACE900E5E960 /* ViewStopwatch-ViewController.swift */,
 			);
-			path = InputStopwatch;
+			path = ViewStopwatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,17 +240,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F59D2F24BFAC8000E5E960 /* InputStopwatch-Models.swift in Sources */,
-				A5F59D3B24BFACE900E5E960 /* InputStopwatch-ViewController.swift in Sources */,
+				A5F59D2F24BFAC8000E5E960 /* ViewStopwatch-Models.swift in Sources */,
+				A5F59D3B24BFACE900E5E960 /* ViewStopwatch-ViewController.swift in Sources */,
 				A5700B3B2459BAF20074A99A /* AppDelegate.swift in Sources */,
 				A5592F7624CA5EDA003419B1 /* RootTabView.swift in Sources */,
 				A5700B3D2459BAF20074A99A /* SceneDelegate.swift in Sources */,
-				A5F59D3524BFAC9D00E5E960 /* InputStopwatch-Scene.swift in Sources */,
-				A5F59D2D24BFAC0100E5E960 /* InputStopwatch-Interactor.swift in Sources */,
+				A5F59D3524BFAC9D00E5E960 /* ViewStopwatch-Scene.swift in Sources */,
+				A5F59D2D24BFAC0100E5E960 /* ViewStopwatch-Interactor.swift in Sources */,
 				A590009524BFA7390039787F /* ActivityGroup.swift in Sources */,
 				A590009224BFA64A0039787F /* Date+SubtractToTimeInterval.swift in Sources */,
-				A5F59D3724BFACAE00E5E960 /* InputStopwatch-Service.swift in Sources */,
-				A5F59D3124BFAC8D00E5E960 /* InputStopwatch-Presenter.swift in Sources */,
+				A5F59D3724BFACAE00E5E960 /* ViewStopwatch-Service.swift in Sources */,
+				A5F59D3124BFAC8D00E5E960 /* ViewStopwatch-Presenter.swift in Sources */,
 				A590009024BF9E490039787F /* Log.swift in Sources */,
 				A590009724BFA8050039787F /* User.swift in Sources */,
 			);

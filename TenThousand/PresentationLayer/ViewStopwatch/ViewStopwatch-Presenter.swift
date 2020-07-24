@@ -26,7 +26,7 @@ struct ViewStopwatchPresenter: ViewStopwatchPresenting {
         if let time = response.time {
             timeString = getStringFromTimeInterval(time: time)
         } else {
-            timeString = "00:00:00"
+            timeString = ViewStopwatch.Strings.defaultDisplayedEmptyTime
         }
         
         viewModel.currentTime = timeString

@@ -18,7 +18,10 @@ extension ViewStopwatch {
         var alertValues: AlertValues
         
         var canSave: Bool {
-            return (currentTime ?? "").isEmpty
+            let isNotEmpty = !((currentTime ?? "").isEmpty)
+            let isNotDefault = currentTime != ViewStopwatch.Strings.defaultDisplayedEmptyTime
+            
+            return isNotEmpty && isNotDefault
         }
         
         enum StopwatchState {
@@ -60,6 +63,7 @@ extension ViewStopwatch {
     }
     
     enum Strings {
+        static let defaultDisplayedEmptyTime = "00:00:00"
         static let alertTitleDefault = "Request Failure"
         static let alertTitleSaveFailed = "Save Failed"
         static let alertMessageDefault = "Something bad happened. Please try again."
