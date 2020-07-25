@@ -11,26 +11,17 @@ import SwiftUI
 extension ViewStopwatch {
     
     class ViewModel: ObservableObject {
-        @Published var currentTime: String?
-        @Published var stopwatchState: StopwatchState = .paused
+        @ObservedObject var stopwatch: Stopwatch
         @Published var isShowingAlert = false
         @Published var isShowingSaveLog = false
         var alertValues: AlertValues
         
         var canSave: Bool {
-            let isNotEmpty = !((currentTime ?? "").isEmpty)
-            let isNotDefault = currentTime != ViewStopwatch.Strings.defaultDisplayedEmptyTime
-            
-            return isNotEmpty && isNotDefault
+            return stopwatch.observedString != ViewStopwatch.Strings.defaultDisplayedEmptyTime
         }
         
-        enum StopwatchState {
-            case running
-            case paused
-        }
-        
-        init(currentTime: String? = nil) {
-            self.currentTime = currentTime
+        init(stopwatch: Stopwatch) {
+            self.stopwatch = stopwatch
             self.alertValues = AlertValues(
                 alerTitle: ViewStopwatch.Strings.alertTitleDefault,
                 alertMessage: ViewStopwatch.Strings.alertMessageDefault,

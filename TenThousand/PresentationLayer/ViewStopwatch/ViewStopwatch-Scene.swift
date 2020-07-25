@@ -6,20 +6,20 @@
 //  Copyright © 2020 Mikael Weiss. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 enum ViewStopwatch {
     
     struct Scene {
-        let viewModel = ViewStopwatch.ViewModel()
-        
         let viewController: ViewStopwatchViewController
-        init() {
-            let service = ViewStopwatch.Service()
+        
+        init(stopwatch: Stopwatch) {
+            let viewModel = ViewStopwatch.ViewModel(stopwatch: stopwatch)
+            let service = ViewStopwatch.Service(stopwatch: stopwatch)
             let presenter = ViewStopwatchPresenter(viewModel: viewModel)
             let interactor = ViewStopwatchInteractor(service: service, presenter: presenter)
             
-            self.viewController = ViewStopwatchViewController(ViewModel: viewModel, interactor: interactor)
+            self.viewController = ViewStopwatchViewController(viewModel: viewModel, interactor: interactor)
         }
     }
     

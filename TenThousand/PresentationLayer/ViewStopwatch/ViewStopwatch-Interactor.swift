@@ -9,8 +9,7 @@
 import Foundation
 
 protocol ViewStopwatchRequesting {
-    func didTapPause()
-    func didTapPlay()
+    func didToggleStopwatchState()
     func saveLog()
 }
 
@@ -19,14 +18,8 @@ struct ViewStopwatchInteractor: ViewStopwatchRequesting {
     let service: ViewStopwatchService
     let presenter: ViewStopwatchPresenting
     
-    func didTapPause() {
-        service.pauseStopwatch()
-        presenter.presentPauseStopwatch()
-    }
-    
-    func didTapPlay() {
-        service.startStopwatch()
-        presenter.presentStartStopwatch()
+    func didToggleStopwatchState() {
+        service.toggleStopwatch()
     }
     
     func saveLog() {

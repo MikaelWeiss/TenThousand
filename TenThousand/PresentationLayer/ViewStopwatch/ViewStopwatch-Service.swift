@@ -6,13 +6,11 @@
 //  Copyright © 2020 Mikael Weiss. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 protocol ViewStopwatchService {
-    func fetchStopwatchTime() -> TimeInterval?
-    func startStopwatch()
+    func toggleStopwatch()
     func saveStopwatchLog() throws
-    func pauseStopwatch()
 }
 
 extension ViewStopwatch {
@@ -22,18 +20,10 @@ extension ViewStopwatch {
     }
     
     struct Service: ViewStopwatchService {
-        var stopwatchTime: TimeInterval?
+        @ObservedObject var stopwatch: Stopwatch
         
-        func fetchStopwatchTime() -> TimeInterval? {
-            return stopwatchTime
-        }
-        
-        func startStopwatch() {
-            
-        }
-        
-        func pauseStopwatch() {
-            
+        func toggleStopwatch() {
+            stopwatch.toggleStopwatchState()
         }
         
         func saveStopwatchLog() throws {

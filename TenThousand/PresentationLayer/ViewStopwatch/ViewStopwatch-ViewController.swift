@@ -9,38 +9,37 @@
 import SwiftUI
 
 protocol ViewStopwatchDisplaying {
-    var ViewModel: ViewStopwatch.ViewModel { get set }
+    var viewModel: ViewStopwatch.ViewModel { get }
 }
 
 protocol ViewStopwatchInputing {
-    func didTapPause()
-    func didTapPlay()
+    func didToggleStopwatchState()
     func didTapSave()
 }
 
 struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatchInputing {
-    @ObservedObject var ViewModel: ViewStopwatch.ViewModel
+    @ObservedObject var viewModel: ViewStopwatch.ViewModel
     let interactor: ViewStopwatchRequesting
     
     var body: some View {
         ZStack {
-            Text("\(ViewModel.currentTime ?? "00:00:00")")
+            Text("\(viewModel.stopwatch.observedString)")
                 .font(timerTextFont)
             VStack {
                 Spacer()
                 HStack {
                     Button(action: {
-                        self.didTapSave()
+                        self.didToggleStopwatchState()
                     }) {
                         Image(systemName:
-                        (ViewModel.stopwatchState == .paused ?
+                        (viewModel.stopwatch.isPaused ?
                          playImage :
                          pauseImage))
                             .renderingMode(.original)
                     }
                     .frame(height: buttonHeight)
                     .frame(maxWidth: .infinity)
-                    if ViewModel.canSave {
+                    if viewModel.canSave {
                         Button(action: {
                             self.didTapSave()
                         }) {
@@ -55,21 +54,13 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
         }
         .font(pausePlayImageFont)
         .onTapGesture {
-            if self.ViewModel.stopwatchState == .paused {
-                self.didTapPause()
-            } else {
-                self.didTapPlay()
-            }
+            self.didToggleStopwatchState()
         }
     }
 
     // MARK: - Inputing
-    func didTapPause() {
-        interactor.didTapPause()
-    }
-    
-    func didTapPlay() {
-        interactor.didTapPlay()
+    func didToggleStopwatchState() {
+        interactor.didToggleStopwatchState()
     }
     
     func didTapSave() {
@@ -86,6 +77,6 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
 
 //struct StopwatchViewController_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ViewStopwatchViewController(ViewModel: ViewStopwatch.ViewModel(currentTime: nil), interactor: nil)
+//        ViewStopwatchViewController(viewModel: ViewStopwatch.ViewModel(), interactor: nil)
 //    }
 //}

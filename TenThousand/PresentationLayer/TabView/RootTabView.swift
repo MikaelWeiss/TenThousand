@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct RootTabView: View {
+    @EnvironmentObject var stopwatch: Stopwatch
+    
     var body: some View {
         TabView {
-            ViewStopwatch.Scene().viewController
+            ViewStopwatch.Scene(stopwatch: stopwatch).viewController
             .tabItem {
-                Image(systemName: "1.square.fill")
+                Image(systemName: "stopwatch")
                 Text("Stopwatch")
             }
         }
@@ -22,6 +24,6 @@ struct RootTabView: View {
 
 struct RootTabView_Previews: PreviewProvider {
     static var previews: some View {
-        RootTabView()
+        RootTabView().environmentObject(Stopwatch())
     }
 }
