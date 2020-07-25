@@ -29,21 +29,11 @@ extension ViewStopwatch {
         }
     }
     
-    enum FetchStopwatchTime {
-        struct Resposne {
-            let time: TimeInterval?
-        }
-    }
-    
-    enum StartStopwatch { }
-    
     struct AlertValues {
         let alerTitle: String
         let alertMessage: String
         let alertActionTitle: String
     }
-    
-    enum PauseStopwatch { }
     
     enum SaveStopwatch { }
     
@@ -59,5 +49,15 @@ extension ViewStopwatch {
         static let alertTitleSaveFailed = "Save Failed"
         static let alertMessageDefault = "Something bad happened. Please try again."
         static let alertActionTitleDefault = "OK"
+    }
+    
+    enum SystemImages {
+        static let playImage = "play.circle.fill"
+        static let pauseImage = "pause.circle.fill"
+    }
+    
+    enum FontStyles {
+        static let timerTextFont = Font.system(.largeTitle, design: .rounded).weight(.heavy)
+        static let pausePlayImageFont = Font.system(size: 30, weight: .bold)
     }
 }

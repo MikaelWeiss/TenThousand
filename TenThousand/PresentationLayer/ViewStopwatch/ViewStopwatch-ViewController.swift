@@ -20,11 +20,13 @@ protocol ViewStopwatchInputing {
 struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatchInputing {
     @ObservedObject var viewModel: ViewStopwatch.ViewModel
     let interactor: ViewStopwatchRequesting
+    private typealias fonts = ViewStopwatch.FontStyles
+    private typealias images = ViewStopwatch.SystemImages
     
     var body: some View {
         ZStack {
             Text("\(viewModel.stopwatch.observedString)")
-                .font(timerTextFont)
+                .font(fonts.timerTextFont)
             VStack {
                 Spacer()
                 HStack {
@@ -33,8 +35,8 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
                     }) {
                         Image(systemName:
                         (viewModel.stopwatch.isPaused ?
-                         playImage :
-                         pauseImage))
+                            images.playImage :
+                            images.pauseImage))
                             .renderingMode(.original)
                     }
                     .frame(height: buttonHeight)
@@ -52,7 +54,7 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
                 }
             }
         }
-        .font(pausePlayImageFont)
+        .font(fonts.pausePlayImageFont)
         .onTapGesture {
             self.didToggleStopwatchState()
         }
@@ -68,10 +70,6 @@ struct ViewStopwatchViewController: View, ViewStopwatchDisplaying, ViewStopwatch
     }
     
     // MARK: - Drawing Constants
-    private let timerTextFont = Font.system(.largeTitle, design: .rounded).weight(.heavy)
-    private let playImage = "play.circle.fill"
-    private let pauseImage = "pause.circle.fill"
-    private let pausePlayImageFont = Font.system(size: 30, weight: .bold)
     private let buttonHeight: CGFloat = 44
 }
 
