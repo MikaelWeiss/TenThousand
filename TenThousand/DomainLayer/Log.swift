@@ -10,9 +10,10 @@ import Foundation
 
 
 struct Log {
-    let startDate: Date
-    let totalTime: TimeInterval
-    let notes: String?
+    var startDate: Date? = nil
+    var totalTime: TimeInterval = 0
+    var splits: [Split]? = nil
+    var notes: String? = nil
     
     struct Split {
         let startDate: Date

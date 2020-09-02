@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="subtractingInterval" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Split" representedClassName="Split" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date"/>
+    </entity>
+    <elements>
+        <element name="Entity" positionX="8476.4609375" positionY="2379.046875" width="128" height="103"/>
+        <element name="Split" positionX="8102.56640625" positionY="2441.5390625" width="128" height="73"/>
+    </elements>
+</model>

@@ -10,20 +10,20 @@ import SwiftUI
 
 
 class Stopwatch: ObservableObject {
+    private var log = Log()
     private var timer: Timer!
-    private var start: Date? = nil
-    private var subtractingInterval: TimeInterval = 0
     private var pauseDate: Date?
+    private var subtractingInterval: TimeInterval = 0
     private var trueTime: TimeInterval {
         if self.isPaused {
-            if pauseDate != nil && start != nil {
-                return pauseDate! - start! - subtractingInterval
+            if pauseDate != nil && log.startDate != nil {
+                return pauseDate! - log.startDate! - subtractingInterval
             } else {
                 return 0.0
             }
         } else {
-            if start != nil {
-                return Date() - start! - subtractingInterval
+            if log.startDate != nil {
+                return Date() - log.startDate! - subtractingInterval
             } else {
                 return 0.0
             }
@@ -52,15 +52,18 @@ class Stopwatch: ObservableObject {
     }
     
     private func playTimer() {
-        if start == nil { start = Date() }
+        if log.startDate == nil { log.startDate = Date() }
         isPaused = false
         if pauseDate != nil {
-            subtractingInterval += Date() - pauseDate!
+            self.subtractingInterval += Date() - pauseDate!
+            self.log.splits?.append(Log.Split(startDate: pauseDate!, endDate: Date()))
+            pauseDate = nil
         }
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.objectWillChange.send()
             self.observedString = self.trueTimeString
+            self.log.totalTime = self.trueTime
         }
     }
     
